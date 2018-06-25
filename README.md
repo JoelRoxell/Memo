@@ -6,13 +6,13 @@ This project includes everything you need to start on your new and obnoxiously f
 
 ## Included
 
-* React (>16)
-* Typescript
-* HMR
-* Sass
-* Autoprefixer
+- React (>16)
+- Typescript
+- HMR
+- Sass
+- Autoprefixer
   <!-- * Redux -->
-* Webpack (>4)
+- Webpack (>4)
 
 **Both code and css-module variable names are type-checked.**
 
@@ -20,7 +20,7 @@ If value productivity, stop apply different project configurations and folder st
 
 ## TODO
 
-1.  Add relative imports for both webpack and TS.
+1.  ~~Add relative imports for both webpack and TS.~~
 2.  Finish build pipelines for stage|prod.
 3.  Consider adding redux.
 4.  Replace hard coded variables in config from cli.
@@ -30,3 +30,26 @@ If value productivity, stop apply different project configurations and folder st
 1.  `yarn`
 2.  `yarn start`
 3.  `yarn build`
+
+## Add new path resolutions
+
+### tsconfig.json
+
+```json
+"paths": {
+  "components/*": ["components/*"]
+}
+```
+
+### weboack.config.js
+
+```js
+resolve: {
+  extensions: ['.ts', '.tsx', '.js', '.json'],
+  alias: {
+    components: path.join(srcPath, 'components')
+  }
+},
+```
+
+For even help see [this](https://decembersoft.com/posts/say-goodbye-to-relative-paths-in-typescript-imports/) or read about module resolution [here](https://www.typescriptlang.org/docs/handbook/module-resolution.html)

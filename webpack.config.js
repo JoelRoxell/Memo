@@ -18,7 +18,10 @@ module.exports = {
   devtool: 'cheap-module-source-map',
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: {
+      components: path.join(srcPath, 'components')
+    }
   },
 
   devServer: {
