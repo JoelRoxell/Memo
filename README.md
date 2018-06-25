@@ -24,6 +24,7 @@ If value productivity, stop apply different project configurations and folder st
 2.  Finish build pipelines for stage|prod.
 3.  Consider adding redux.
 4.  Replace hard coded variables in config from cli.
+5.  Create a generator for component file structure.
 
 ## Usage
 
