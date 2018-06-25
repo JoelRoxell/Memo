@@ -14,6 +14,7 @@
     "@types/lodash": "^4.14.108",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
+    "@types/react-redux": "^6.0.2",
     "@types/webpack-env": "^1.13.6",
     "autoprefixer": "^8.5.0",
     "css-loader": "^0.28.11",
@@ -35,6 +36,8 @@
   },
   "dependencies": {
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
   }
 }

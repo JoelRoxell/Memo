@@ -25,6 +25,7 @@ If value productivity, stop apply different project configurations and folder st
 3.  Consider adding redux.
 4.  Replace hard coded variables in config from cli.
 5.  Create a generator for component file structure.
+6.  Add react router.
 
 ## Usage
 
