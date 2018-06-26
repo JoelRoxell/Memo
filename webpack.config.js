@@ -20,7 +20,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
-      components: path.join(srcPath, 'components')
+      components: path.join(srcPath, 'components'),
+      store: path.join(srcPath, 'store')
     }
   },
 
