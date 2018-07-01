@@ -12,7 +12,8 @@ module.exports = {
   entry: srcPath + '/index.tsx',
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/dist'
+    path: __dirname + '/dist',
+    publicPath: '/'
   },
 
   devtool: 'cheap-module-source-map',
@@ -26,6 +27,7 @@ module.exports = {
   },
 
   devServer: {
+    historyApiFallback: true,
     contentBase: output,
     stats: {
       modules: false
@@ -35,7 +37,6 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin(),
     new ForkTsCheckerWebpackPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
