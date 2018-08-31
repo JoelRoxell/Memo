@@ -4,7 +4,6 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
-import { StripeProvider } from 'react-stripe-elements'
 
 import { reducers, ApplicationState, createInitialState } from 'store'
 import Api from 'api'
@@ -13,7 +12,6 @@ import Axios from 'axios'
 import DB from 'api/modules/db'
 import { Token } from 'api/modules/auth'
 import { extractTokenData } from 'store/auth'
-import { env } from 'utils/env'
 
 const api = new Api(Axios, {
   db: {
@@ -53,18 +51,10 @@ function render(state: ApplicationState) {
   //   actors.forEach(fn => fn(store.getState(), store.dispatch))
   // })
 
-  const stripePK = env({
-    dev: 'pk_test_viir4vfafZ0rK17n466xrwvz',
-    stage: 'pk_test_viir4vfafZ0rK17n466xrwvz',
-    prod: 'pk_live_BOsg7L2JBeZjGC5pFMPW5YsF'
-  })
-
   ReactDOM.render(
-    <StripeProvider apiKey={stripePK}>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </StripeProvider>,
+    <Provider store={store}>
+      <App />
+    </Provider>,
     document.getElementById('root') as HTMLElement
   )
 }

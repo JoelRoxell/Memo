@@ -1,9 +1,10 @@
 {
-  "name": "Aeneas",
+  "name": "aeneas",
   "version": "0.0.10",
   "description": "...",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --mode development --https --cert ./ssl/localhost.crt --key ./ssl/localhost.key",
+    "start:no-ssl": "webpack-dev-server --hot --inline --mode development",
     "build": "yarn clean;webpack --config webpack.config.prod.js --mode production",
     "clean": "rimraf build/*",
     "test": "echo \"Error: no test specified\" && exit 0",

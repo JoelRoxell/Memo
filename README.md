@@ -1,7 +1,5 @@
 # WIP Anease
 
-tmp: vim node_modules/react-ionicons/lib/index.js remove ln: 89, default styles that overwrite any css changes.
-
 ## Included
 
 - React (>16)
@@ -16,10 +14,12 @@ tmp: vim node_modules/react-ionicons/lib/index.js remove ln: 89, default styles 
 
 If value productivity, stop apply different project configurations and folder structures in every new setup. Otherwise, you will end up and accept your fate as Josef.K.
 
+![img](https://www.sartle.com/sites/default/files/images/artwork/wm_the_fight_between_aeneas_and_king_turnus_from_virgils_aeneid_Q20880310.jpg)
+
 ## Usage
 
 Development:
-`npm start`
+`yarn start` or `yarn start:no-ssl`
 
 build container:
 `docker build -t <project>-front-end .`
