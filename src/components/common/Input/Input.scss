@@ -1,0 +1,22 @@
+.input {
+  .text-field {
+    width: 100%;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: rem(1) solid #ccc;
+    height: rem(30);
+    font-size: rem(12);
+    transition: color 0.3s, border 0.3s;
+    appearance: none;
+    outline: none;
+    margin-bottom: rem(30);
+    background: transparent;
+
+    &:focus {
+      box-shadow: none;
+      border-bottom-color: $active-color;
+      color: $active-color;
+    }
+  }
+}

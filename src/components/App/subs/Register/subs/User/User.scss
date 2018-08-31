@@ -1,0 +1,18 @@
+.podcaster {
+  display: flex;
+  flex-direction: column;
+
+  .agreed-terms {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(48);
+
+    strong {
+      color: $base-color;
+    }
+  }
+
+  .error {
+    color: $error-color;
+  }
+}

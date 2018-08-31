@@ -1,0 +1,92 @@
+.profile {
+  background: white;
+  width: rem(457);
+  box-shadow: 0 5px 21px 0 rgba(0, 0, 0, 0.08);
+  margin-right: rem(72);
+  margin-top: rem(72);
+  margin-bottom: rem(72);
+  padding-bottom: em(65);
+  height: fit-content;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7.75rem;
+    font-size: 2rem;
+    background: #f5f6f8;
+    width: 100%;
+    font-size: rem(24);
+    margin: 0;
+  }
+
+  .profile-information {
+    margin-top: rem(40);
+
+    .image-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      .profile-image {
+        width: rem(102);
+        height: rem(102);
+        border-radius: 50%;
+        margin-bottom: rem(26);
+      }
+
+      .type {
+        font-size: rem(14);
+      }
+
+      .email {
+        font-size: rem(11);
+      }
+
+      .icon-wrapper {
+        background: $base-color;
+        position: absolute;
+        width: rem(33);
+        height: rem(33);
+        right: rem(190);
+        top: 0;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          fill: white;
+          width: 100%;
+          width: rem(21);
+        }
+      }
+    }
+
+    .form {
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 30px;
+      padding-left: 90px;
+      padding-right: 90px;
+      margin-bottom: rem(30);
+
+      .stripe-text {
+        margin-top: rem(41);
+        margin-bottom: rem(41);
+      }
+
+      .stripe-success {
+        margin-top: rem(24);
+        color: $success-color;
+      }
+    }
+
+    .stripe {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

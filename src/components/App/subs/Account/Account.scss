@@ -1,0 +1,15 @@
+.account {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: rem(100);
+  overflow: auto;
+
+  @include medium {
+    flex-direction: column;
+  }
+
+  @include large {
+    flex-direction: row;
+  }
+}

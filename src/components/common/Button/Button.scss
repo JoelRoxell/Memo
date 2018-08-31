@@ -1,0 +1,78 @@
+.button {
+  cursor: pointer;
+  height: rem(51);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 0 rem(2) rem(6) 0 rgba(0, 0, 0, 0.11);
+  text-decoration: none;
+  transition: all 0.3s;
+  width: 100%;
+  $inactive-color: #606e79;
+  font-size: rem(15);
+
+  color: $inactive-color;
+  fill: $inactive-color;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  &.primary {
+    background-color: $base-color !important;
+    color: white;
+  }
+
+  &.normal {
+    background-color: $default-color;
+    border: 0;
+  }
+
+  &.none {
+    background: none;
+    box-shadow: none;
+  }
+
+  &.active-link {
+    background: #f5f6f8;
+    fill: $active-color !important;
+    transition: fill 0.3s;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 rem(8) rgba(0, 0, 0, 0.25);
+  }
+
+  &:hover {
+    box-shadow: inset 0 0 0 rem(999) rgba(0, 0, 0, 0.125);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    align-items: center;
+
+    &.left {
+      flex: 1;
+      padding-left: 15%;
+    }
+
+    .text {
+      flex: 1;
+    }
+  }
+
+  .icon {
+    $size: rem(20);
+    margin-right: rem(18);
+    height: $size;
+    width: $size;
+    // flex: 1;
+  }
+}
