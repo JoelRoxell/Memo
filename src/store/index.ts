@@ -1,20 +1,6 @@
 import { combineReducers, Reducer } from 'redux'
 import Api from 'api'
-import {
-  AuthState,
-  reducer as authReducer,
-  initialState as authInitialState
-} from './auth'
-import {
-  ProfileState,
-  reducer as profileReducer,
-  initialState as profileInitialState
-} from './profile'
-import {
-  ApplicationConfigState,
-  reducer as applicationConfigReducer,
-  initialState as applicationConfigInitialState
-} from './app'
+import { AuthState, reducer as authReducer, initialState as authInitialState } from './auth'
 
 // Additional props for connected React components. This prop is passed by default with `connect()`
 export interface ConnectedReduxProps {
@@ -23,24 +9,16 @@ export interface ConnectedReduxProps {
 
 export interface ApplicationState {
   auth: AuthState
-  profile: ProfileState
-  applicationConfig: ApplicationConfigState
 }
 
 export function createInitialState(): ApplicationState {
   return {
-    auth: authInitialState,
-    profile: profileInitialState,
-    applicationConfig: applicationConfigInitialState
+    auth: authInitialState
   }
 }
 
-export const reducers: Reducer<ApplicationState> = combineReducers<
-  ApplicationState
->({
-  auth: authReducer,
-  profile: profileReducer,
-  applicationConfig: applicationConfigReducer
+export const reducers: Reducer<ApplicationState> = combineReducers<ApplicationState>({
+  auth: authReducer
 })
 
 /**
@@ -48,21 +26,13 @@ export const reducers: Reducer<ApplicationState> = combineReducers<
  * @param cb
  */
 export function thunk<T>(
-  cb: (
-    dispatch: Dispatch<T>,
-    getState: () => ApplicationState,
-    api: Api
-  ) => void
+  cb: (dispatch: Dispatch<T>, getState: () => ApplicationState, api: Api) => void
 ) {
   return cb
 }
 
 // Below type definitions are used to fix errors thrown by TS on thunk actions.
-export type ThunkAction<R, S, E> = (
-  dispatch: Dispatch<S>,
-  getState: () => S,
-  extraArgument: E
-) => R
+export type ThunkAction<R, S, E> = (dispatch: Dispatch<S>, getState: () => S, extraArgument: E) => R
 
 export interface Dispatch<S> {
   <R, E>(asyncAction: ThunkAction<R, S, E>): R

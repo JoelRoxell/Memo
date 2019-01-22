@@ -1,15 +1,8 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
+
 import { ConnectedReduxProps, ApplicationState } from 'store'
-import Profile from 'components/App/subs/Account/subs/Profile'
-import { UserType } from 'api/modules/auth'
-import {
-  getProfile,
-  onChange,
-  updateProfile,
-  uploadProfileImage
-} from 'store/profile'
 import { DecodedToken } from 'store/auth'
 
 import * as style from './Account.scss'
@@ -19,7 +12,6 @@ interface AccountProps extends ConnectedReduxProps {
   presentation: string
   image: string
   website: string
-  type: UserType
   email: string
   name: string
   loading: boolean
@@ -37,30 +29,7 @@ class Account extends React.Component<AccountProps> {
     return (
       <div className={style.account}>
         <Switch>
-          <Route
-            exact
-            path="/account"
-            render={() => (
-              <Profile
-                onMount={() => {
-                  this.props.dispatch(getProfile(this.props.token.sub))
-                }}
-                name={this.props.name}
-                email={this.props.email}
-                presentation={this.props.presentation}
-                image={this.props.image}
-                userType={this.props.type}
-                stripe={{}}
-                website={this.props.website}
-                onChange={(name, value) => {
-                  this.props.dispatch(onChange(name, value))
-                }}
-                onSubmit={() => this.props.dispatch(updateProfile())}
-                onUpload={file => this.props.dispatch(uploadProfileImage(file))}
-                loading={this.props.loadingStripe}
-              />
-            )}
-          />
+          <Route exact path="/account" render={() => <div>test</div>} />
         </Switch>
       </div>
     )
@@ -68,10 +37,8 @@ class Account extends React.Component<AccountProps> {
 }
 
 const mapStateToProps = (state: ApplicationState) => ({
-  image: state.profile.image,
   name: state.auth.name,
-  token: state.auth.decodedToken,
-  loading: state.profile.loading
+  token: state.auth.decodedToken
 })
 
 export default connect(mapStateToProps)(Account)

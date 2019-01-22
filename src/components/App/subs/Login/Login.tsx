@@ -36,7 +36,6 @@ class Login extends React.Component<LoginProps> {
               this.props.dispatch(onChange(name, value))
             }}
           />
-
           <Input
             title="Password"
             name="password"
@@ -48,12 +47,8 @@ class Login extends React.Component<LoginProps> {
               this.props.dispatch(onChange(name, value))
             }}
           />
-
-          <Button type="primary" title="Log in" />
-
-          {this.props.error && (
-            <div className={style.error}>{this.props.error}</div>
-          )}
+          <Button type="primary" title="lol" />
+          {this.props.error && <div className={style.error}>{this.props.error}</div>}
         </form>
       </div>
     )

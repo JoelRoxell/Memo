@@ -13,6 +13,8 @@ import DB from 'api/modules/db'
 import { Token } from 'api/modules/auth'
 import { extractTokenData } from 'store/auth'
 
+let initialState = createInitialState()
+
 const api = new Api(Axios, {
   db: {
     onInit: async (db: DB) => {
@@ -20,19 +22,17 @@ const api = new Api(Axios, {
 
       const auth = await db.get<Token>('auth', 'token')
 
-      let initialState = createInitialState()
-
       if (auth) {
         initialState.auth.token = auth.token
         initialState.auth.decodedToken = extractTokenData(auth.token)
       }
 
-      render(initialState)
+      render(initialState, App)
     }
   }
 })
 
-function render(state: ApplicationState) {
+function render(state: ApplicationState, Component: any) {
   const composeEnhancers = composeWithDevTools({
     // options like actionSanitizer, stateSanitizer
   })
@@ -53,8 +53,19 @@ function render(state: ApplicationState) {
 
   ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <Component />
     </Provider>,
     document.getElementById('root') as HTMLElement
   )
+}
+
+/*
+ * Enable support for hot-reloading the application.
+ */
+if (module.hot) {
+  module.hot.accept('components/App', () => {
+    console.log('run')
+
+    render(initialState, App)
+  })
 }

@@ -1,3 +1,4 @@
+// This file is generated automatically
 export const login: string;
 export const view: string;
 export const title: string;

@@ -4,10 +4,6 @@ import { env } from 'utils/env'
 export interface Token {
   token: string
 }
-export enum UserType {
-  Podcaster = 0,
-  Sponsor = 1
-}
 
 class Auth {
   private http: AxiosStatic
@@ -22,21 +18,10 @@ class Auth {
     })
   }
 
-  public async register(
-    email: string,
-    password: string,
-    type: UserType,
-    acceptedAgreement: boolean,
-    name: string,
-    contact: string = ''
-  ): Promise<Token> {
+  public async register(email: string, password: string): Promise<Token> {
     const response = await this.http.post<Token>(this.socket, {
       email,
       password,
-      user_type: type,
-      accepted_agreement: acceptedAgreement,
-      agreement_content: true,
-      contact,
       name
     })
 

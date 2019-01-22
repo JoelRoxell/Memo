@@ -2,15 +2,12 @@ import { ReceiveSignIn } from './index'
 import { Token } from 'api/modules/auth/index'
 import { Action } from 'redux'
 import { thunk } from 'store'
-import { UserType } from 'api/modules/auth'
 
 export interface Register extends Action {
   type: 'REGISTER'
   payload: {
     email: string
     password: string
-    type: UserType
-    acceptedAgreement: boolean
   }
 }
 export interface ReceiveRegister extends Action {
@@ -64,7 +61,6 @@ export interface DecodedToken {
   sub: string
   email: string
   name: string
-  userType: UserType
   iat: number
   exp: number
 }
@@ -98,7 +94,6 @@ export const toggleTerms = (): ToggleTerms => {
 export const register = (
   email: string,
   password: string,
-  type: UserType,
   acceptedAgreement: boolean,
   name: string,
   contact?: string
@@ -109,21 +104,13 @@ export const register = (
       payload: {
         email,
         password,
-        type,
         acceptedAgreement,
         contact
       }
     })
 
     try {
-      const token = await api.modules.auth.register(
-        email,
-        password,
-        type,
-        acceptedAgreement,
-        name,
-        contact
-      )
+      const token = await api.modules.auth.register(email, password)
 
       dispatch({
         type: 'RECEIVE_REGISTER',
@@ -182,10 +169,7 @@ export const initialState: AuthState = {
   error: ''
 }
 
-export const reducer = (
-  state: AuthState = initialState,
-  action: AuthActions
-): AuthState => {
+export const reducer = (state: AuthState = initialState, action: AuthActions): AuthState => {
   switch (action.type) {
     case 'REGISTER':
       return {

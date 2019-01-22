@@ -33,7 +33,8 @@ const devConfig = Object.assign(config, {
     new HtmlWebpackPlugin({
       inject: true,
       template: srcPath + '/index.html'
-    })
+    }),
+    new webpack.WatchIgnorePlugin([/css\.d\.ts$/])
   ],
 
   module: {
@@ -56,12 +57,19 @@ const devConfig = Object.assign(config, {
         use: [
           require.resolve('style-loader'),
           {
-            loader: require.resolve('typings-for-css-modules-loader'),
+            loader: 'dts-css-modules-loader',
             options: {
-              modules: true,
-              localIdentName: '[path][name]__[local]--[hash:base64:5]',
-              camelCase: true,
-              namedExport: true
+              namedExport: true,
+              banner: '// This file is generated automatically'
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true, // this option must be enabled
+              camelCase: 'only',
+              localIdentName: '[local]',
+              exportOnlyLocals: true
             }
           },
           {
@@ -90,10 +98,7 @@ const devConfig = Object.assign(config, {
           {
             loader: 'prepend-style-loader',
             options: {
-              prepend: [
-                path.resolve('src/utils/functions'),
-                path.resolve('src/utils/variables')
-              ]
+              prepend: [path.resolve('src/utils/functions'), path.resolve('src/utils/variables')]
             }
           }
         ]

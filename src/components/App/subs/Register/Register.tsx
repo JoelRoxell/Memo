@@ -1,12 +1,9 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
-import User from './subs/User'
 
 import * as style from './Register.scss'
 import { ApplicationState, ConnectedReduxProps } from 'store'
-import { onChange, register } from 'store/auth'
-import { UserType } from 'api/modules/auth'
 
 interface RegisterProps extends ConnectedReduxProps {
   loading: boolean
@@ -28,30 +25,7 @@ class Register extends React.Component<RegisterProps> {
             <Route
               path="/register/podcaster"
               render={() => {
-                return (
-                  <User
-                    loading={this.props.loading}
-                    email={this.props.email}
-                    name={this.props.name}
-                    password={this.props.password}
-                    error={this.props.error}
-                    agreedTerms={this.props.agreedTerms}
-                    onChange={(name, value) =>
-                      this.props.dispatch(onChange(name, value))
-                    }
-                    submit={() => {
-                      this.props.dispatch(
-                        register(
-                          this.props.email,
-                          this.props.password,
-                          UserType.Podcaster,
-                          this.props.agreedTerms,
-                          this.props.name
-                        )
-                      )
-                    }}
-                  />
-                )
+                return <div />
               }}
             />
           </Switch>

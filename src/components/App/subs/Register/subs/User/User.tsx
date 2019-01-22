@@ -55,9 +55,7 @@ class Podcaster extends React.Component<PodcasterProps> {
           autoComplete="password"
         />
 
-        {this.props.error && (
-          <div className={style.error}>{this.props.error}</div>
-        )}
+        {this.props.error && <div className={style.error}>{this.props.error}</div>}
 
         <Button type="primary" title="Submit" />
       </form>
