@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
+
 import { ConnectedReduxProps } from 'store'
 import { signOut } from 'store/auth'
 import { Redirect } from 'react-router'

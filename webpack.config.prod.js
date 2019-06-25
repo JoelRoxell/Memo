@@ -1,4 +1,5 @@
 const path = require('path')
+
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -6,7 +7,6 @@ const autoprefixer = require('autoprefixer')
 
 const outputFolder = 'build'
 const srcPath = path.resolve(__dirname, 'src')
-const outputPath = path.resolve(__dirname, outputFolder)
 const shouldUseSourceMap = false
 const shouldUseRelativeAssetPaths = false
 const cssFilename = 'static/css/[name].[hash:8].css'
@@ -48,9 +48,7 @@ module.exports = {
         removeComments: true
       }
     }),
-    new ExtractTextPlugin({
-      filename: cssFilename
-    }),
+    new ExtractTextPlugin({ filename: cssFilename }),
     new webpack.DefinePlugin({
       'process.env': {
         PROJECT_ENV: `"${process.env.PROJECT_ENV}"`
@@ -83,13 +81,13 @@ module.exports = {
             {
               fallback: require.resolve('style-loader'),
               use: [
-                // require.resolve('style-loader'),
                 {
                   loader: require.resolve('typings-for-css-modules-loader'),
                   options: {
-                    modules: true,
-                    camelCase: true,
-                    namedExport: true
+                    modules: {
+                      localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                    },
+                    localsConvention: 'camelCaseOnly'
                   }
                 },
                 {
@@ -98,18 +96,7 @@ module.exports = {
                     // Necessary for external CSS imports to work
                     // https://github.com/facebookincubator/create-react-app/issues/2677
                     ident: 'postcss',
-                    plugins: () => [
-                      require('postcss-flexbugs-fixes'),
-                      autoprefixer({
-                        browsers: [
-                          '>1%',
-                          'last 4 versions',
-                          'Firefox ESR',
-                          'not ie < 9' // React doesn't support IE8 anyway
-                        ],
-                        flexbox: 'no-2009'
-                      })
-                    ]
+                    plugins: () => [require('postcss-flexbugs-fixes'), autoprefixer()]
                   }
                 },
                 {

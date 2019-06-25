@@ -1,4 +1,5 @@
 const path = require('path')
+
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
@@ -66,10 +67,10 @@ const devConfig = Object.assign(config, {
           {
             loader: 'css-loader',
             options: {
-              modules: true, // this option must be enabled
-              camelCase: 'only',
-              localIdentName: '[local]',
-              exportOnlyLocals: true
+              modules: {
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              },
+              localsConvention: 'camelCaseOnly'
             }
           },
           {
@@ -78,18 +79,7 @@ const devConfig = Object.assign(config, {
               // Necessary for external CSS imports to work
               // https://github.com/facebookincubator/create-react-app/issues/2677
               ident: 'postcss',
-              plugins: () => [
-                require('postcss-flexbugs-fixes'),
-                autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9' // React doesn't support IE8 anyway
-                  ],
-                  flexbox: 'no-2009'
-                })
-              ]
+              plugins: () => [require('postcss-flexbugs-fixes'), autoprefixer()]
             }
           },
           {

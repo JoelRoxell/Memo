@@ -11,7 +11,6 @@ interface AccountProps extends ConnectedReduxProps {
   open: boolean
   presentation: string
   image: string
-  website: string
   email: string
   name: string
   loading: boolean

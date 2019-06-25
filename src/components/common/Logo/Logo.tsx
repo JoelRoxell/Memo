@@ -1,17 +1,15 @@
 import * as React from 'react'
+
 import * as style from './Logo.scss'
 
-interface LogoProps {}
+function Logo() {
+  return (
+    <div className={style.logo}>
+      <strong>{`My`}</strong>
 
-class Logo extends React.Component<LogoProps> {
-  render() {
-    return (
-      <div className={style.logo}>
-        <strong>My</strong>
-        project
-      </div>
-    )
-  }
+      {`project`}
+    </div>
+  )
 }
 
 export default Logo

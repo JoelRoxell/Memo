@@ -1,10 +1,12 @@
 import * as React from 'react'
-import * as style from './Login.scss'
+
 import Input from 'components/common/Input'
 import Button from 'components/common/Button'
 import { ConnectedReduxProps, ApplicationState } from 'store'
 import { connect } from 'react-redux'
 import { signIn, onChange } from 'store/auth'
+
+import * as style from './Login.scss'
 
 interface LoginProps extends ConnectedReduxProps {
   email: string
@@ -36,6 +38,7 @@ class Login extends React.Component<LoginProps> {
               this.props.dispatch(onChange(name, value))
             }}
           />
+
           <Input
             title="Password"
             name="password"
@@ -47,7 +50,11 @@ class Login extends React.Component<LoginProps> {
               this.props.dispatch(onChange(name, value))
             }}
           />
-          <Button type="primary" title="lol" />
+
+          <Button type="primary" title="Sign in" />
+
+          <Button to="register" type="default" title="Register" className={style.registerButton} />
+
           {this.props.error && <div className={style.error}>{this.props.error}</div>}
         </form>
       </div>
