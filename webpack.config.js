@@ -11,9 +11,10 @@ const srcPath = path.resolve(__dirname, 'src')
 
 const devConfig = Object.assign(config, {
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: __dirname + '/' + output,
-    publicPath: '/'
+    publicPath: '/',
+    chunkFilename: '[name].bundle.js'
   },
 
   devtool: 'cheap-module-source-map',
