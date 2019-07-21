@@ -34,7 +34,8 @@ module.exports = {
       api: path.join(srcPath, 'api'),
       config: path.join(srcPath, 'config'),
       assets: path.join(srcPath, 'assets'),
-      utils: path.join(srcPath, 'utils')
+      utils: path.join(srcPath, 'utils'),
+      contexts: path.join(srcPath, 'contexts')
     }
   },
 

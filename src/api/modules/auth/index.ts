@@ -1,4 +1,4 @@
-import { AxiosStatic } from 'axios'
+import { AxiosInstance } from 'axios'
 import { env } from 'utils/env'
 
 export interface Token {
@@ -6,13 +6,13 @@ export interface Token {
 }
 
 class Auth {
-  private http: AxiosStatic
+  private http: AxiosInstance
   private socket: string
 
-  constructor(http: AxiosStatic) {
+  constructor(http: AxiosInstance) {
     this.http = http
     this.socket = env({
-      dev: 'https://localhost:8001/user',
+      dev: 'http://localhost:8005/user',
       prod: 'https://{auth-endpoint}/user',
       stage: 'https://{auth-endpoint}/user'
     })
@@ -21,8 +21,7 @@ class Auth {
   public async register(email: string, password: string): Promise<Token> {
     const response = await this.http.post<Token>(this.socket, {
       email,
-      password,
-      name
+      password
     })
 
     return response.data

@@ -1,18 +1,18 @@
 import * as React from 'react'
 import { Route, Redirect } from 'react-router'
-import { connect } from 'react-redux'
-import { ApplicationState } from 'store'
 
 interface ProtectedRouteProps {
   token?: string
   path: string
   to: string
   component: any
-  render: any
+  render?: any
   reversed?: boolean
 }
 
-class ProtectedRoute extends React.Component<ProtectedRouteProps> {
+// TODO: update to use context
+
+export default class ProtectedRoute extends React.Component<ProtectedRouteProps> {
   render() {
     const Component = this.props.component || this.props.render
     const token = this.props.token ? 1 : 0
@@ -28,7 +28,3 @@ class ProtectedRoute extends React.Component<ProtectedRouteProps> {
     )
   }
 }
-
-export default connect((state: ApplicationState) => ({
-  token: state.auth.token
-}))(ProtectedRoute)

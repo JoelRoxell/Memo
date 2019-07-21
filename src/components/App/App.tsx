@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { Suspense, lazy } from 'react'
-import { connect } from 'react-redux'
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom'
-
-import { ApplicationState, ConnectedReduxProps } from 'store'
 
 import ProtectedRoute from 'components/common/ProtectedRoute'
 import Loader from 'components/common/Loader'
+
+import * as style from './App.scss'
+import UserProvider from 'contexts/user-context'
 
 const Register = lazy(() =>
   import(
@@ -33,15 +33,9 @@ const SignOut = lazy(() =>
   )
 )
 
-import * as style from './App.scss'
-
-interface AppProps extends ConnectedReduxProps {
-  userId: string | null
-}
-
-class App extends React.Component<AppProps> {
-  render() {
-    return (
+function App() {
+  return (
+    <UserProvider>
       <Router>
         <div className={style.app}>
           <div className={style.view}>
@@ -61,12 +55,8 @@ class App extends React.Component<AppProps> {
           </div>
         </div>
       </Router>
-    )
-  }
+    </UserProvider>
+  )
 }
 
-const mapStateToProps = (state: ApplicationState) => ({
-  userId: state.auth.decodedToken ? state.auth.decodedToken.sub : null
-})
-
-export default connect(mapStateToProps)(App)
+export default App

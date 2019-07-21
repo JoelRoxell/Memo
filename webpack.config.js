@@ -26,7 +26,8 @@ const devConfig = Object.assign(config, {
       modules: false
     },
     hot: true,
-    compress: true
+    compress: true,
+    overlay: true
   },
 
   plugins: [

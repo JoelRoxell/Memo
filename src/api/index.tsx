@@ -1,7 +1,7 @@
-import { AxiosStatic, AxiosError } from 'axios'
+import Axios, { AxiosError, AxiosInstance } from 'axios'
 
 import Auth from './modules/auth'
-import DB, { Config as DBConfig } from './modules/db'
+import { Config as DBConfig } from './modules/db'
 
 interface Config {
   db: DBConfig
@@ -12,15 +12,15 @@ export interface ResponseError extends AxiosError {}
 class Api {
   public modules: {
     auth: Auth
-    db: DB
+    // db: DB
   }
 
-  constructor(private http: AxiosStatic, config: Config) {
+  constructor(private http: AxiosInstance, config?: Config) {
     this.modules = {
-      auth: new Auth(this.http),
-      db: new DB(config.db)
+      auth: new Auth(this.http)
+      // db: new DB(config.db)
     }
   }
 }
 
-export default Api
+export default new Api(Axios.create())
