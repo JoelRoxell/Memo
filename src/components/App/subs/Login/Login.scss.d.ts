@@ -1,6 +1,7 @@
 // This file is generated automatically
 export const login: string;
 export const view: string;
+export const input: string;
 export const logo: string;
 export const form: string;
 export const title: string;

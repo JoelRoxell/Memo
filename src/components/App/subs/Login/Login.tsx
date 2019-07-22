@@ -2,13 +2,12 @@ import * as React from 'react'
 
 import Input from 'components/common/Input'
 import Button from 'components/common/Button'
-
-import * as style from './Login.scss'
 import { UserContext } from 'contexts/user-context'
 import Loader from 'components/common/Loader'
-
 import backgroundImage from 'assets/img/leaf.jpg'
 import Card from 'components/common/Card'
+
+import * as style from './Login.scss'
 
 function Login() {
   const user = React.useContext(UserContext)
@@ -37,6 +36,8 @@ function Login() {
             validate={(value: string) => {
               return value.length > 3
             }}
+            rightIcon="user"
+            className={style.input}
           />
 
           <Input
@@ -48,6 +49,8 @@ function Login() {
             type="password"
             onChange={(name, value) => user.setUser({ ...user, [name]: value })}
             validate={(value: string) => value.length > 3}
+            rightIcon="eye"
+            className={style.input}
           />
 
           <Button title="Sign in" disabled={!valid} />
@@ -60,20 +63,14 @@ function Login() {
             <div className={style.line} />
           </div>
 
-          <Button
-            type={Button.types.SECONDARY}
-            to="register"
-            title="Register as a new User"
-            className={style.registerButton}
-          />
+          <Button type={Button.types.SECONDARY} to="register" title="Register as a new User" />
 
           {user.loading && <Loader />}
 
           {user.error && <div className={style.error}>{user.error}</div>}
         </form>
       </Card>
-
-      <div className={style.copy}>{`© 2019 Heliospectra AB. All rights reserved.`}</div>
+      <div className={style.copy}>{`© 2019 X AB. All rights reserved.`}</div>
     </div>
   )
 }

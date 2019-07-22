@@ -6,35 +6,76 @@
     font-weight: bold;
   }
 
-  .text-field {
-    width: 100%;
-    outline: none;
-    box-shadow: none;
-    border: rem(1) solid #ccc;
-    border-radius: rem(4);
-    height: rem(40);
-    font-size: rem(18);
-    padding: rem(8);
-    transition: color 0.3s, border 0.3s;
-    appearance: none;
-    outline: none;
-    margin-bottom: rem(30);
-    background: transparent;
+  .input-wrapper {
+    position: relative;
 
-    &.err {
-      border-color: $error;
-      color: $error;
+    .left-icon {
+      position: absolute;
+      right: 0;
+      fill: $primary;
+
+      &.err {
+        fill: $error;
+      }
+
+      &.success {
+        fill: $success;
+      }
+
+      &.focus {
+        fill: $focus;
+      }
     }
 
-    &.success {
-      border-color: $success;
-      color: $success;
+    .right-icon {
+      position: absolute;
+      bottom: rem(8);
+      right: rem(8);
+      fill: $primary;
+      transition: fill 0.3s, border 0.3s;
+
+      &.err {
+        fill: $error;
+      }
+
+      &.success {
+        fill: $success;
+      }
+
+      &.focus {
+        fill: $focus;
+      }
     }
 
-    &:focus {
+    .text-field {
+      width: 100%;
+      outline: none;
       box-shadow: none;
-      border-color: $focus;
-      color: $focus;
+      border: rem(1) solid #ccc;
+      border-radius: rem(4);
+      height: rem(40);
+      font-size: rem(18);
+      padding: rem(8);
+      transition: color 0.3s, border 0.3s;
+      appearance: none;
+      outline: none;
+      background: transparent;
+
+      &.err {
+        border-color: $error;
+        color: $error;
+      }
+
+      &.success {
+        border-color: $success;
+        color: $success;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border-color: $focus;
+        color: $focus;
+      }
     }
   }
 }
