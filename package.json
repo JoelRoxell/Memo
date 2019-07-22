@@ -7,8 +7,8 @@
     "start:no-ssl": "webpack-dev-server --hot --inline --mode development",
     "build": "yarn clean;webpack --config webpack.config.prod.js --mode production",
     "clean": "rimraf build/*",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "deploy": "python src/deployment/bucket.py"
+    "deploy": "python src/deployment/bucket.py",
+    "test": "jest"
   },
   "author": "Joel Roxell <joel.roxell@annevo.com> (https://github.com/JoelRoxell)",
   "dependencies": {
@@ -46,7 +46,6 @@
     "@types/webpack": "^4.32.0",
     "classnames": "^2.2.6",
     "file-loader": "^4.1.0",
-    "generator-annevo": "^1.1.6-beta.2",
     "net": "^1.0.2",
     "react-addons-css-transition-group": "^15.6.2",
     "url-loader": "^2.1.0"
@@ -59,5 +58,29 @@
   ],
   "resolutions": {
     "hoist-non-react-statics": "^3.3.0"
-  }
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^24.0.15",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
+    "generator-annevo": "^1.1.6-beta.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2"
+  },
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+  "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ]
 }

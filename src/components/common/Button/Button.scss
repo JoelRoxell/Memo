@@ -1,15 +1,15 @@
 .button {
   cursor: pointer;
-  height: rem(51);
+  height: rem(40);
   justify-content: center;
   align-items: center;
   display: flex;
-  box-shadow: 0 rem(2) rem(6) 0 rgba(0, 0, 0, 0.11);
   text-decoration: none;
   transition: all 0.3s;
-  width: 100%;
+  width: rem(220);
   $inactive-color: #606e79;
   font-size: rem(15);
+  border-radius: rem(4);
 
   color: $inactive-color;
   fill: $inactive-color;
