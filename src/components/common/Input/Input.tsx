@@ -11,28 +11,26 @@ interface InputProps {
   onChange?: (inputName: string, value: string) => any
 }
 
-class Input extends React.Component<InputProps> {
-  render() {
-    return (
-      <div className={style.input}>
-        <div>{this.props.title}</div>
+function Input(props: InputProps) {
+  return (
+    <div className={style.input}>
+      <div className={style.label}>{props.title}</div>
 
-        <input
-          className={style.textField}
-          name={this.props.name || this.props.title}
-          type={this.props.type || 'text'}
-          value={this.props.value}
-          placeholder={this.props.placeholder}
-          autoComplete={this.props.autoComplete}
-          onChange={event => {
-            if (this.props.onChange) {
-              this.props.onChange(event.target.name, event.target.value)
-            }
-          }}
-        />
-      </div>
-    )
-  }
+      <input
+        className={style.textField}
+        name={props.name || props.title}
+        type={props.type || 'text'}
+        value={props.value}
+        placeholder={props.placeholder}
+        autoComplete={props.autoComplete}
+        onChange={event => {
+          if (props.onChange) {
+            props.onChange(event.target.name, event.target.value)
+          }
+        }}
+      />
+    </div>
+  )
 }
 
 export default Input

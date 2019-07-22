@@ -7,49 +7,74 @@ import * as style from './Login.scss'
 import { UserContext } from 'contexts/user-context'
 import Loader from 'components/common/Loader'
 
+import backgroundImage from 'assets/img/leaf.jpg'
+import Card from 'components/common/Card'
+
 function Login() {
   const user = React.useContext(UserContext)
-  console.log(user)
+  const valid = user.email.length > 3 && user.password.length > 3
 
   return (
-    <div className={style.login}>
-      <form
-        className={style.view}
-        onSubmit={e => {
-          e.preventDefault()
+    <div
+      className={style.login}
+      style={{
+        background: `url(${backgroundImage})`
+      }}
+    >
+      <Card className={style.view}>
+        <form
+          className={style.form}
+          onSubmit={e => {
+            e.preventDefault()
 
-          user.signIn()
-        }}
-      >
-        <div className={style.title}>{`Login title`}</div>
+            user.signIn()
+          }}
+        >
+          <div className={style.logo}>{`Login title`}</div>
 
-        <Input
-          title="Email"
-          name="email"
-          placeholder="email"
-          value={user.email}
-          autoComplete="email"
-          onChange={(name, value) => user.setUser({ ...user, [name]: value })}
-        />
+          <Input
+            title="User"
+            name="email"
+            placeholder="email"
+            value={user.email}
+            autoComplete="email"
+            onChange={(name, value) => user.setUser({ ...user, [name]: value })}
+          />
 
-        <Input
-          title="Password"
-          name="password"
-          placeholder="password"
-          value={user.password}
-          autoComplete="password"
-          type="password"
-          onChange={(name, value) => user.setUser({ ...user, [name]: value })}
-        />
+          <Input
+            title="Password"
+            name="password"
+            placeholder="password"
+            value={user.password}
+            autoComplete="password"
+            type="password"
+            onChange={(name, value) => user.setUser({ ...user, [name]: value })}
+          />
 
-        <Button type="primary" title="Sign in" />
+          <Button title="Sign in" disabled={!valid} />
 
-        <Button to="register" type="default" title="Register" className={style.registerButton} />
+          <div className={style.split}>
+            <div className={style.line} />
 
-        {user.loading && <Loader />}
+            <div className={style.text}>{`or`}</div>
 
-        {/* {error && <div className={style.error}>{error}</div>} */}
-      </form>
+            <div className={style.line} />
+          </div>
+
+          <Button
+            type={Button.types.SECONDARY}
+            to="register"
+            title="Register as a new User"
+            className={style.registerButton}
+          />
+
+          {user.loading && <Loader />}
+
+          {user.error && <div className={style.error}>{user.error}</div>}
+        </form>
+      </Card>
+
+      <div className={style.copy}>{`© 2019 Heliospectra AB. All rights reserved.`}</div>
     </div>
   )
 }

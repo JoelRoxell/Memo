@@ -6,7 +6,7 @@ exports[`Button onClick 1`] = `
   onClick={[Function]}
 >
   <p>
-    Click
+    A clickable button
   </p>
 </button>
 `;

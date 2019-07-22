@@ -8,7 +8,7 @@ import * as style from './Button.scss'
 interface ButtonProps {
   title: string
   to?: string
-  type?: 'primary' | 'default' | 'none'
+  type?: string
   className?: string
   disabled?: boolean
   icon?: string
@@ -16,18 +16,20 @@ interface ButtonProps {
   left?: boolean
 }
 
+Button.types = {
+  SECONDARY: 'secondary',
+  PRIMARY: 'primary'
+}
+
 function Button(props: ButtonProps) {
   let className
 
   switch (props.type) {
-    case 'primary':
+    case Button.types.PRIMARY:
       className = style.primary
       break
-    case 'default':
-      className = style.normal
-      break
-    case 'none':
-      className = style.none
+    case Button.types.SECONDARY:
+      className = style.secondary
       break
     default:
       className = style.primary

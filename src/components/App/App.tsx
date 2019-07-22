@@ -41,13 +41,18 @@ function App() {
           <div className={style.view}>
             <Suspense fallback={<Loader />}>
               <Switch>
-                <ProtectedRoute path="/login" to="/account" component={Login} reversed />
+                <ProtectedRoute path="/login" redirect="/account" component={Login} reversed />
 
-                <ProtectedRoute path="/register" to="/login" component={Register} reversed />
+                <ProtectedRoute
+                  path="/register"
+                  redirect="/account"
+                  component={Register}
+                  reversed
+                />
 
-                <ProtectedRoute path="/sign-out" to="/account" component={SignOut} />
+                <ProtectedRoute path="/sign-out" redirect="/login" component={SignOut} />
 
-                <ProtectedRoute path="/account" to="/login" component={Account} />
+                <ProtectedRoute path="/account" redirect="/login" component={Account} />
 
                 <Route exact path="/" render={() => <Redirect to="/login" />} />
               </Switch>

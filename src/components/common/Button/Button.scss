@@ -5,14 +5,13 @@
   align-items: center;
   display: flex;
   text-decoration: none;
-  transition: all 0.3s;
   width: rem(220);
-  $inactive-color: #606e79;
-  font-size: rem(15);
+  font-size: rem(16);
+  font-weight: bold;
   border-radius: rem(4);
-
-  color: $inactive-color;
-  fill: $inactive-color;
+  border: 0;
+  color: #fff;
+  fill: $primary;
 
   p {
     padding: 0;
@@ -20,13 +19,11 @@
   }
 
   &.primary {
-    background-color: $base-color !important;
-    color: white;
+    background-color: $primary !important;
   }
 
-  &.normal {
-    background-color: $default-color;
-    border: 0;
+  &.secondary {
+    background-color: $secondary !important;
   }
 
   &.none {
@@ -36,7 +33,7 @@
 
   &.active-link {
     background: #f5f6f8;
-    fill: $active-color !important;
+    fill: $primary !important;
     transition: fill 0.3s;
   }
 
@@ -73,6 +70,5 @@
     margin-right: rem(18);
     height: $size;
     width: $size;
-    // flex: 1;
   }
 }

@@ -1,2 +1,8 @@
 // This file is generated automatically
 export const account: string;
+export const top: string;
+export const corner: string;
+export const header: string;
+export const body: string;
+export const navigation: string;
+export const view: string;

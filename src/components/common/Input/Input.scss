@@ -1,12 +1,20 @@
 .input {
+  width: 100%;
+
+  .label {
+    margin-bottom: rem(16);
+    font-weight: bold;
+  }
+
   .text-field {
     width: 100%;
     outline: none;
     box-shadow: none;
-    border: none;
-    border-bottom: rem(1) solid #ccc;
-    height: rem(30);
-    font-size: rem(12);
+    border: rem(1) solid #ccc;
+    border-radius: rem(4);
+    height: rem(40);
+    font-size: rem(18);
+    padding: rem(8);
     transition: color 0.3s, border 0.3s;
     appearance: none;
     outline: none;
@@ -15,8 +23,8 @@
 
     &:focus {
       box-shadow: none;
-      border-bottom-color: $active-color;
-      color: $active-color;
+      border-color: $primary;
+      color: $primary;
     }
   }
 }

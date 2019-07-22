@@ -1,0 +1,27 @@
+.dashboard {
+  .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(37);
+
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      min-width: rem(271);
+      height: rem(228);
+      margin-right: rem(33);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .bottom {
+    .power-consumption {
+      height: rem(450);
+    }
+  }
+}

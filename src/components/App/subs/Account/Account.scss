@@ -1,15 +1,45 @@
 .account {
   display: flex;
-  flex-direction: column;
   width: 100%;
-  margin-left: rem(100);
   overflow: auto;
+  flex-direction: column;
 
-  @include medium {
-    flex-direction: column;
+  .top {
+    display: flex;
+
+    .corner {
+      width: rem(128);
+      height: rem(96);
+      background-color: $background;
+    }
+
+    .header {
+      height: rem(96);
+      flex: 1;
+    }
   }
 
-  @include large {
-    flex-direction: row;
+  .body {
+    display: flex;
+    flex: 1;
+
+    .navigation {
+      width: rem(128);
+      height: 100%;
+    }
+
+    .view {
+      flex: 1;
+      background-color: $background;
+      padding: rem(45) rem(64) rem(45) rem(64);
+    }
   }
+
+  // @include medium {
+  //   flex-direction: column;
+  // }
+
+  // @include large {
+  //   flex-direction: row;
+  // }
 }

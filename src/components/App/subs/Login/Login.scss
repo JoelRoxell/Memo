@@ -1,17 +1,35 @@
 .login {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   flex: 1;
+  background: url('/src/assets/img/leaf.jpg');
 
   .view {
     display: flex;
     flex-direction: column;
-    margin-top: rem(50);
+    margin-top: rem(85);
+    margin-bottom: rem(45);
     background: white;
-    width: rem(457);
-    height: rem(459);
-    padding: rem(59) rem(90) rem(65) rem(90);
+    width: rem(617);
+    height: rem(710);
     box-shadow: 0 rem(2) rem(21) 0 rgba(0, 0, 0, 0.08);
+    padding-left: rem(145);
+    padding-right: rem(145);
+
+    .logo {
+      margin-top: rem(59);
+      margin-bottom: rem(41);
+      width: rem(283);
+      height: rem(86);
+    }
+
+    .form {
+      width: rem(336);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .title {
       color: black;
@@ -19,12 +37,31 @@
     }
 
     .error {
-      color: $error-color;
+      color: $error;
       margin-top: rem(24);
     }
+  }
 
-    .register-button {
-      margin-top: rem(25);
+  .split {
+    display: flex;
+    align-items: center;
+    margin-top: rem(32);
+    margin-bottom: rem(32);
+
+    .line {
+      width: rem(154);
+      height: 1px;
+      background-color: $light_gray;
     }
+
+    .text {
+      margin-right: rem(16);
+      margin-left: rem(16);
+    }
+  }
+
+  .copy {
+    opacity: 0.8;
+    color: #fff;
   }
 }

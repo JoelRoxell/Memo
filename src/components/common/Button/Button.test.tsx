@@ -5,12 +5,12 @@ import Button from './Button'
 test('Button onClick', () => {
   let didClick = false
 
-  const button = shallow(<Button title="Click" onClick={() => (didClick = true)} />)
+  const button = shallow(<Button title="A clickable button" onClick={() => (didClick = true)} />)
 
   // Interaction demo
   button.simulate('click')
 
-  expect(button.text()).toEqual('Click')
+  expect(button.text()).toEqual('A clickable button')
   expect(didClick).toBeTruthy()
 
   // Snapshot demo

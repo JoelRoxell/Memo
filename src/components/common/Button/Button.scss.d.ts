@@ -1,7 +1,7 @@
 // This file is generated automatically
 export const button: string;
 export const primary: string;
-export const normal: string;
+export const secondary: string;
 export const none: string;
 export const activeLink: string;
 export const inner: string;

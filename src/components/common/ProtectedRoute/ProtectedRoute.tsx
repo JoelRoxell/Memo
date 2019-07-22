@@ -1,30 +1,31 @@
 import * as React from 'react'
 import { Route, Redirect } from 'react-router'
+import { UserContext } from 'contexts/user-context'
 
 interface ProtectedRouteProps {
-  token?: string
   path: string
-  to: string
+  redirect: string
   component: any
   render?: any
   reversed?: boolean
 }
 
-// TODO: update to use context
+function ProtectedRoute(props: ProtectedRouteProps) {
+  const user = React.useContext(UserContext)
+  const Component = props.component || props.render
+  const token = user.token ? 1 : 0
+  const reversed = props.reversed ? 1 : 0
 
-export default class ProtectedRoute extends React.Component<ProtectedRouteProps> {
-  render() {
-    const Component = this.props.component || this.props.render
-    const token = this.props.token ? 1 : 0
-    const reversed = this.props.reversed ? 1 : 0
+  console.info(`signed in: ${token}`)
 
-    return (
-      <Route
-        path={this.props.path}
-        render={() =>
-          token ^ reversed ? <Component {...this.props} /> : <Redirect to={this.props.to} />
-        }
-      />
-    )
-  }
+  return (
+    <Route
+      path={props.path}
+      render={() =>
+        token ^ reversed ? <Component {...props} /> : <Redirect to={props.redirect} />
+      }
+    />
+  )
 }
+
+export default ProtectedRoute
