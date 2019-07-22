@@ -8,3 +8,4 @@ export const inner: string;
 export const left: string;
 export const text: string;
 export const icon: string;
+export const disabled: string;

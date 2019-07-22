@@ -38,7 +38,9 @@ function Button(props: ButtonProps) {
   return props.to ? (
     <NavLink
       activeClassName={style.activeLink}
-      className={classNames(style.button, className, props.className)}
+      className={classNames(style.button, className, props.className, {
+        [style.disabled]: props.disabled
+      })}
       to={props.disabled ? '' : props.to}
     >
       <div className={classNames(style.inner, { [style.left]: props.left })}>
@@ -48,7 +50,9 @@ function Button(props: ButtonProps) {
   ) : (
     <button
       onClick={props.onClick}
-      className={classNames(style.button, className, props.className)}
+      className={classNames(style.button, className, props.className, {
+        [style.disabled]: props.disabled
+      })}
       disabled={props.disabled}
     >
       <p>{props.title}</p>

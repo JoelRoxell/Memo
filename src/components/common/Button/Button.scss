@@ -19,11 +19,11 @@
   }
 
   &.primary {
-    background-color: $primary !important;
+    background-color: $primary;
   }
 
   &.secondary {
-    background-color: $secondary !important;
+    background-color: $secondary;
   }
 
   &.none {
@@ -70,5 +70,9 @@
     margin-right: rem(18);
     height: $size;
     width: $size;
+  }
+
+  &.disabled {
+    background-color: $light-gray;
   }
 }

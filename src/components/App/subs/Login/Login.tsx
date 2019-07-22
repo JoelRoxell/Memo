@@ -15,12 +15,7 @@ function Login() {
   const valid = user.email.length > 3 && user.password.length > 3
 
   return (
-    <div
-      className={style.login}
-      style={{
-        background: `url(${backgroundImage})`
-      }}
-    >
+    <div className={style.login} style={{ background: `url(${backgroundImage})` }}>
       <Card className={style.view}>
         <form
           className={style.form}
@@ -39,6 +34,9 @@ function Login() {
             value={user.email}
             autoComplete="email"
             onChange={(name, value) => user.setUser({ ...user, [name]: value })}
+            validate={(value: string) => {
+              return value.length > 3
+            }}
           />
 
           <Input
@@ -49,6 +47,7 @@ function Login() {
             autoComplete="password"
             type="password"
             onChange={(name, value) => user.setUser({ ...user, [name]: value })}
+            validate={(value: string) => value.length > 3}
           />
 
           <Button title="Sign in" disabled={!valid} />

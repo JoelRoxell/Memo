@@ -21,10 +21,20 @@
     margin-bottom: rem(30);
     background: transparent;
 
+    &.err {
+      border-color: $error;
+      color: $error;
+    }
+
+    &.success {
+      border-color: $success;
+      color: $success;
+    }
+
     &:focus {
       box-shadow: none;
-      border-color: $primary;
-      color: $primary;
+      border-color: $focus;
+      color: $focus;
     }
   }
 }

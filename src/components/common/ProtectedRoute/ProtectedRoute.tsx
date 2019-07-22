@@ -16,8 +16,6 @@ function ProtectedRoute(props: ProtectedRouteProps) {
   const token = user.token ? 1 : 0
   const reversed = props.reversed ? 1 : 0
 
-  console.info(`signed in: ${token}`)
-
   return (
     <Route
       path={props.path}
