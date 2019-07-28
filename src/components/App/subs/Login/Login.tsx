@@ -10,7 +10,7 @@ import Card from 'components/common/Card'
 import * as style from './Login.scss'
 
 function Login() {
-  const user = React.useContext(UserContext)
+  const user = React.useContext(UserContext) as UserContext
   const valid = user.email.length > 3 && user.password.length > 3
 
   return (
@@ -32,7 +32,10 @@ function Login() {
             placeholder="email"
             value={user.email}
             autoComplete="email"
-            onChange={(name, value) => user.setUser({ ...user, [name]: value })}
+            onChange={(name, value) => {
+              user.clearError()
+              user.setUser({ ...user, [name]: value })
+            }}
             validate={(value: string) => {
               return value.length > 3
             }}
@@ -47,7 +50,10 @@ function Login() {
             value={user.password}
             autoComplete="password"
             type="password"
-            onChange={(name, value) => user.setUser({ ...user, [name]: value })}
+            onChange={(name, value) => {
+              user.clearError()
+              user.setUser({ ...user, [name]: value })
+            }}
             validate={(value: string) => value.length > 3}
             rightIcon="eye"
             className={style.input}

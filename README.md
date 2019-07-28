@@ -20,10 +20,13 @@ build container:
 `docker build -t <project>-front-end .`
 
 test application:
-`docker run <project>-front-end npm test`
+`docker run <project>-front-end npm t`
 
 build application:
-`docker run -v $(pwd)/build:/usr/src/app/build <project>-front-end yarn build`
+`docker run -v $(pwd)/build:/usr/src/app/build <project>-front-end npm build`
+
+coverage
+`npm t -- --coverage.`
 
 ## Add new path resolutions
 

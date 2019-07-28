@@ -1,18 +1,20 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import Button from './Button'
+// import {} from 'jest'
 
-test('Button onClick', () => {
-  let didClick = false
+describe('Button', () => {
+  test('Button onClick', () => {
+    const cb = jest.fn(x => {})
+    const button = shallow(<Button title="A clickable button" onClick={cb} />)
 
-  const button = shallow(<Button title="A clickable button" onClick={() => (didClick = true)} />)
+    // Interaction demo
+    button.simulate('click').simulate('click')
 
-  // Interaction demo
-  button.simulate('click')
+    expect(button.text()).toEqual('A clickable button')
+    expect(cb.mock.calls.length).toEqual(2)
 
-  expect(button.text()).toEqual('A clickable button')
-  expect(didClick).toBeTruthy()
-
-  // Snapshot demo
-  expect(button).toMatchSnapshot()
+    // Snapshot demo
+    expect(button).toMatchSnapshot()
+  })
 })

@@ -35,6 +35,12 @@ class Auth {
 
     return response.data
   }
+
+  public async signOut() {
+    const response = await this.http.delete(this.socket)
+
+    return response.data
+  }
 }
 
 export default Auth

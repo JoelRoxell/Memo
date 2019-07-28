@@ -2,39 +2,36 @@ import * as React from 'react'
 import { useState, ReactNode } from 'react'
 import Api from 'api'
 
-type User = {
+export type User = {
   email: string
   password: string
   token: string | null
 }
-type UserContext = User & {
+export type UserContext = User & {
   setUser: (u: User) => void
   register: () => Promise<any>
   signIn: () => Promise<any>
-  signOut: () => void
+  signOut: () => Promise<void>
   loading: boolean
   error: string
+  clearError: () => void
 }
 
 // Default context object.
-export const UserContext = React.createContext<UserContext>({
-  email: '',
-  password: '',
-  token: null,
-  setUser: () => {},
-  register: () => Promise.resolve({ token: '' }),
-  signIn: () => Promise.resolve({ token: '' }),
-  signOut: () => null,
-  loading: false,
-  error: ''
-})
+export const UserContext = React.createContext<Partial<UserContext>>({})
 
-export default function UserProvider({ children }: { children: ReactNode }) {
+export default function UserProvider({
+  children,
+  defaultUser
+}: {
+  children: ReactNode
+  defaultUser?: User
+}) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [user, setUser] = useState({
-    email: '',
-    password: '',
+    email: defaultUser ? defaultUser.email : '',
+    password: defaultUser ? defaultUser.password : '',
     token: localStorage.getItem('token')
   })
   const actions = {
@@ -46,13 +43,11 @@ export default function UserProvider({ children }: { children: ReactNode }) {
         .register(user.email, user.password)
         .then(res => {
           localStorage.setItem('token', res.token)
-
-          console.log('success')
+          setUser({ ...user, token: res.token })
         })
         .catch(err => {
-          console.log(err)
-
-          setError(err)
+          setError(err.message)
+          localStorage.removeItem('token')
         })
         .finally(() => {
           setLoading(false)
@@ -69,6 +64,10 @@ export default function UserProvider({ children }: { children: ReactNode }) {
 
           setUser({ ...user, token: res.token })
         })
+        .catch(err => {
+          setError(err.message)
+          localStorage.removeItem('token')
+        })
         .finally(() => {
           setLoading(false)
         })
@@ -77,6 +76,8 @@ export default function UserProvider({ children }: { children: ReactNode }) {
     signOut() {
       localStorage.removeItem('token')
       setUser({ email: '', password: '', token: '' })
+
+      return Api.modules.auth.signOut()
     }
   }
 
@@ -86,7 +87,8 @@ export default function UserProvider({ children }: { children: ReactNode }) {
         ...user,
         ...actions,
         loading,
-        error
+        error,
+        clearError: () => setError('')
       }}
     >
       {children}
