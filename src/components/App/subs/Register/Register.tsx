@@ -7,7 +7,7 @@ import { UserContext } from 'contexts/user-context'
 import Loader from 'components/common/Loader'
 
 function Register() {
-  const user = React.useContext(UserContext)
+  const user = React.useContext(UserContext) as UserContext
 
   return (
     <div className={style.register}>

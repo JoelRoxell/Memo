@@ -7,7 +7,7 @@ import { UserContext } from 'contexts/user-context'
 import Dashboard from './subs/Dashboard'
 
 function Account() {
-  const user = React.useContext(UserContext)
+  const user = React.useContext(UserContext) as UserContext
 
   return (
     <div className={style.account}>
