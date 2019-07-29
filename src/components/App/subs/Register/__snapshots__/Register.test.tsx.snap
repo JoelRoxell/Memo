@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register render 1`] = `
+<UserProvider>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Register>
+        <div
+          className="register"
+        >
+          <div
+            className="view"
+          >
+            This is should be a register page...
+            <Button
+              title="Login"
+              to="login"
+              type="default"
+            >
+              <NavLink
+                activeClassName="activeLink"
+                className="button primary"
+                to="login"
+              >
+                <Link
+                  aria-current={null}
+                  className="button primary"
+                  to="login"
+                >
+                  <a
+                    aria-current={null}
+                    className="button primary"
+                    href="/login"
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="inner"
+                    >
+                      <p
+                        className="text"
+                      >
+                        Login
+                      </p>
+                    </div>
+                  </a>
+                </Link>
+              </NavLink>
+            </Button>
+            <Button
+              onClick={[Function]}
+              title="Register"
+              type="default"
+            >
+              <button
+                className="button primary"
+                onClick={[Function]}
+              >
+                <p>
+                  Register
+                </p>
+              </button>
+            </Button>
+          </div>
+        </div>
+      </Register>
+    </Router>
+  </BrowserRouter>
+</UserProvider>
+`;

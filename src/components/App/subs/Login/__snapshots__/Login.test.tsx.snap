@@ -1,0 +1,226 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login render 1`] = `
+<UserProvider>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Login>
+        <div
+          className="login"
+          style={
+            Object {
+              "background": "url(default)",
+            }
+          }
+        >
+          <Card
+            className="view"
+          >
+            <div
+              className="card view"
+            >
+              <form
+                className="form"
+                onSubmit={[Function]}
+              >
+                <div
+                  className="logo"
+                >
+                  Login title
+                </div>
+                <Input
+                  autoComplete="email"
+                  className="input"
+                  name="email"
+                  onChange={[Function]}
+                  placeholder="email"
+                  rightIcon="user"
+                  title="User"
+                  validate={[Function]}
+                  value=""
+                >
+                  <div
+                    className="input input"
+                  >
+                    <div
+                      className="label"
+                    >
+                      User
+                    </div>
+                    <div
+                      className="inputWrapper"
+                    >
+                      <input
+                        autoComplete="email"
+                        className="textField"
+                        name="email"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="email"
+                        type="text"
+                        value=""
+                      />
+                      <Icon
+                        className="rightIcon"
+                        height={24}
+                        name="user"
+                        width={24}
+                      >
+                        <default
+                          className="rightIcon"
+                          height={24}
+                          name="user"
+                          width={24}
+                        />
+                      </Icon>
+                    </div>
+                  </div>
+                </Input>
+                <Input
+                  autoComplete="password"
+                  className="input"
+                  name="password"
+                  onChange={[Function]}
+                  placeholder="password"
+                  rightIcon="eye"
+                  title="Password"
+                  type="password"
+                  validate={[Function]}
+                  value=""
+                >
+                  <div
+                    className="input input"
+                  >
+                    <div
+                      className="label"
+                    >
+                      Password
+                    </div>
+                    <div
+                      className="inputWrapper"
+                    >
+                      <input
+                        autoComplete="password"
+                        className="textField"
+                        name="password"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="password"
+                        type="password"
+                        value=""
+                      />
+                      <Icon
+                        className="rightIcon"
+                        height={24}
+                        name="eye"
+                        width={24}
+                      >
+                        <default
+                          className="rightIcon"
+                          height={24}
+                          name="eye"
+                          width={24}
+                        />
+                      </Icon>
+                    </div>
+                  </div>
+                </Input>
+                <Button
+                  disabled={true}
+                  title="Sign in"
+                >
+                  <button
+                    className="button primary disabled"
+                    disabled={true}
+                  >
+                    <p>
+                      Sign in
+                    </p>
+                  </button>
+                </Button>
+                <div
+                  className="split"
+                >
+                  <div
+                    className="line"
+                  />
+                  <div
+                    className="text"
+                  >
+                    or
+                  </div>
+                  <div
+                    className="line"
+                  />
+                </div>
+                <Button
+                  title="Register as a new User"
+                  to="register"
+                  type="secondary"
+                >
+                  <NavLink
+                    activeClassName="activeLink"
+                    className="button secondary"
+                    to="register"
+                  >
+                    <Link
+                      aria-current={null}
+                      className="button secondary"
+                      to="register"
+                    >
+                      <a
+                        aria-current={null}
+                        className="button secondary"
+                        href="/register"
+                        onClick={[Function]}
+                      >
+                        <div
+                          className="inner"
+                        >
+                          <p
+                            className="text"
+                          >
+                            Register as a new User
+                          </p>
+                        </div>
+                      </a>
+                    </Link>
+                  </NavLink>
+                </Button>
+              </form>
+            </div>
+          </Card>
+          <div
+            className="copy"
+          >
+            © 2019 X AB. All rights reserved.
+          </div>
+        </div>
+      </Login>
+    </Router>
+  </BrowserRouter>
+</UserProvider>
+`;

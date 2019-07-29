@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account render 1`] = `
+<div
+  className="account"
+>
+  <div
+    className="top"
+  >
+    <div
+      className="corner"
+    />
+    <div
+      className="header"
+    />
+  </div>
+  <div
+    className="body"
+  >
+    <div
+      className="navigation"
+    />
+    <div
+      className="view"
+    >
+      <Switch>
+        <Route
+          exact={true}
+          path="/account"
+          render={[Function]}
+        />
+      </Switch>
+    </div>
+  </div>
+</div>
+`;

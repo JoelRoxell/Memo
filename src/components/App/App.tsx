@@ -7,6 +7,7 @@ import Loader from 'components/common/Loader'
 
 import * as style from './App.scss'
 import UserProvider from 'contexts/user-context'
+import config from 'project-config'
 
 const Register = lazy(() =>
   import(
@@ -59,6 +60,8 @@ function App() {
             </Suspense>
           </div>
         </div>
+
+        <div>{config.version}</div>
       </Router>
     </UserProvider>
   )

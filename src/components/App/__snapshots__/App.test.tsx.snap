@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render 1`] = `
+<UserProvider>
+  <BrowserRouter>
+    <div
+      className="app"
+    >
+      <div
+        className="view"
+      >
+        <Suspense
+          fallback={<Loader />}
+        >
+          <Switch>
+            <ProtectedRoute
+              component={
+                Object {
+                  "$$typeof": Symbol(react.lazy),
+                  "_ctor": [Function],
+                  "_result": null,
+                  "_status": -1,
+                }
+              }
+              path="/login"
+              redirect="/account"
+              reversed={true}
+            />
+            <ProtectedRoute
+              component={
+                Object {
+                  "$$typeof": Symbol(react.lazy),
+                  "_ctor": [Function],
+                  "_result": null,
+                  "_status": -1,
+                }
+              }
+              path="/register"
+              redirect="/account"
+              reversed={true}
+            />
+            <ProtectedRoute
+              component={
+                Object {
+                  "$$typeof": Symbol(react.lazy),
+                  "_ctor": [Function],
+                  "_result": null,
+                  "_status": -1,
+                }
+              }
+              path="/sign-out"
+              redirect="/login"
+            />
+            <ProtectedRoute
+              component={
+                Object {
+                  "$$typeof": Symbol(react.lazy),
+                  "_ctor": [Function],
+                  "_result": null,
+                  "_status": -1,
+                }
+              }
+              path="/account"
+              redirect="/login"
+            />
+            <Route
+              exact={true}
+              path="/"
+              render={[Function]}
+            />
+          </Switch>
+        </Suspense>
+      </div>
+    </div>
+    <div>
+      test version
+    </div>
+  </BrowserRouter>
+</UserProvider>
+`;

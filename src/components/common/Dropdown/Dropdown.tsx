@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as classNames from 'classnames'
 import * as style from './Dropdown.scss'
 import Checkbox from 'components/common/Checkbox'
-import Ionicon from 'react-ionicons'
+import Icon from '../Icon'
 
 interface Item {
   value: string | number
@@ -39,6 +39,8 @@ class Dropdown extends React.Component<DropdownProps> {
   }
 
   onClick = (item: Item) => {
+    console.log('CLICK')
+
     if (this.props.multi) {
       const items = this.state.selected as Item[]
 
@@ -65,6 +67,7 @@ class Dropdown extends React.Component<DropdownProps> {
   }
 
   render() {
+    // TODO: should animate and then remove item list, not only hide it.
     return (
       <div
         className={classNames(style.dropdown, this.props.className)}
@@ -76,14 +79,7 @@ class Dropdown extends React.Component<DropdownProps> {
           })}
           onClick={() => this.toggle(!this.state.active)}
         >
-          {this.props.icon && (
-            <Ionicon
-              className={style.icon}
-              icon={this.props.icon}
-              fontSize="17px"
-              // beat={this.state.active}
-            />
-          )}
+          {this.props.icon && <Icon name={this.props.icon} className={style.icon} />}
 
           {this.props.title}
         </div>
@@ -97,8 +93,7 @@ class Dropdown extends React.Component<DropdownProps> {
             let selected = false
 
             if (Array.isArray(this.state.selected)) {
-              selected =
-                this.state.selected.findIndex(x => x.id == item.id) > -1
+              selected = this.state.selected.findIndex(x => x.id == item.id) > -1
             } else if (this.state.selected) {
               selected = this.state.selected.id == item.id
             }

@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input render 1`] = `
+<div
+  className="input"
+>
+  <div
+    className="label"
+  >
+    email
+  </div>
+  <div
+    className="inputWrapper"
+  >
+    <Icon
+      className="leftIcon"
+      height={24}
+      name="left"
+      width={24}
+    />
+    <input
+      autoComplete="email"
+      className="textField"
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      placeholder="email"
+      type="text"
+      value="default-text"
+    />
+    <Icon
+      className="rightIcon"
+      height={24}
+      name="right"
+      width={24}
+    />
+  </div>
+</div>
+`;

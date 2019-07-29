@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox render 1`] = `
+<Checkbox
+  selected={true}
+>
+  <div
+    className="checkbox active"
+  >
+    <input
+      checked={true}
+      className="checkbox"
+      type="checkbox"
+    />
+  </div>
+</Checkbox>
+`;

@@ -1,0 +1,366 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown multi select 1`] = `
+<Dropdown
+  items={
+    Array [
+      Object {
+        "id": "1",
+        "value": "first",
+      },
+      Object {
+        "id": "2",
+        "value": "second",
+      },
+    ]
+  }
+  multi={true}
+  onSelect={[Function]}
+  title="Select something"
+>
+  <div
+    className="dropdown"
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="button active"
+      onClick={[Function]}
+    >
+      Select something
+    </div>
+    <div
+      className="list active"
+    >
+      <div
+        className="itemWrapper"
+        key="0"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <Checkbox
+            selected={false}
+          >
+            <div
+              className="checkbox"
+            >
+              <input
+                checked={false}
+                className="checkbox"
+                type="checkbox"
+              />
+            </div>
+          </Checkbox>
+          <div
+            className="text"
+          >
+            first
+          </div>
+        </div>
+      </div>
+      <div
+        className="itemWrapper"
+        key="1"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <Checkbox
+            selected={false}
+          >
+            <div
+              className="checkbox"
+            >
+              <input
+                checked={false}
+                className="checkbox"
+                type="checkbox"
+              />
+            </div>
+          </Checkbox>
+          <div
+            className="text"
+          >
+            second
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Dropdown>
+`;
+
+exports[`Dropdown render 1`] = `
+<Dropdown
+  items={
+    Array [
+      Object {
+        "id": "1",
+        "value": "first",
+      },
+      Object {
+        "id": "2",
+        "value": "second",
+      },
+    ]
+  }
+  onSelect={[Function]}
+  title="Select something"
+>
+  <div
+    className="dropdown"
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="button"
+      onClick={[Function]}
+    >
+      Select something
+    </div>
+    <div
+      className="list"
+    >
+      <div
+        className="itemWrapper"
+        key="0"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <Checkbox
+            selected={false}
+          >
+            <div
+              className="checkbox"
+            >
+              <input
+                checked={false}
+                className="checkbox"
+                type="checkbox"
+              />
+            </div>
+          </Checkbox>
+          <div
+            className="text"
+          >
+            first
+          </div>
+        </div>
+      </div>
+      <div
+        className="itemWrapper"
+        key="1"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <Checkbox
+            selected={false}
+          >
+            <div
+              className="checkbox"
+            >
+              <input
+                checked={false}
+                className="checkbox"
+                type="checkbox"
+              />
+            </div>
+          </Checkbox>
+          <div
+            className="text"
+          >
+            second
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Dropdown>
+`;
+
+exports[`Dropdown select / unselect 1`] = `
+<Dropdown
+  items={
+    Array [
+      Object {
+        "id": "1",
+        "value": "first",
+      },
+      Object {
+        "id": "2",
+        "value": "second",
+      },
+    ]
+  }
+  onSelect={[Function]}
+  title="Select something"
+>
+  <div
+    className="dropdown"
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="button active"
+      onClick={[Function]}
+    >
+      Select something
+    </div>
+    <div
+      className="list active"
+    >
+      <div
+        className="itemWrapper"
+        key="0"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <Checkbox
+            selected={false}
+          >
+            <div
+              className="checkbox"
+            >
+              <input
+                checked={false}
+                className="checkbox"
+                type="checkbox"
+              />
+            </div>
+          </Checkbox>
+          <div
+            className="text"
+          >
+            first
+          </div>
+        </div>
+      </div>
+      <div
+        className="itemWrapper"
+        key="1"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <Checkbox
+            selected={false}
+          >
+            <div
+              className="checkbox"
+            >
+              <input
+                checked={false}
+                className="checkbox"
+                type="checkbox"
+              />
+            </div>
+          </Checkbox>
+          <div
+            className="text"
+          >
+            second
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Dropdown>
+`;
+
+exports[`Dropdown show / hide 1`] = `
+<Dropdown
+  items={
+    Array [
+      Object {
+        "id": "1",
+        "value": "first",
+      },
+      Object {
+        "id": "2",
+        "value": "second",
+      },
+    ]
+  }
+  onSelect={[Function]}
+  title="Select something"
+>
+  <div
+    className="dropdown"
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="button active"
+      onClick={[Function]}
+    >
+      Select something
+    </div>
+    <div
+      className="list active"
+    >
+      <div
+        className="itemWrapper"
+        key="0"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <Checkbox
+            selected={false}
+          >
+            <div
+              className="checkbox"
+            >
+              <input
+                checked={false}
+                className="checkbox"
+                type="checkbox"
+              />
+            </div>
+          </Checkbox>
+          <div
+            className="text"
+          >
+            first
+          </div>
+        </div>
+      </div>
+      <div
+        className="itemWrapper"
+        key="1"
+      >
+        <div
+          className="item"
+          onClick={[Function]}
+        >
+          <Checkbox
+            selected={false}
+          >
+            <div
+              className="checkbox"
+            >
+              <input
+                checked={false}
+                className="checkbox"
+                type="checkbox"
+              />
+            </div>
+          </Checkbox>
+          <div
+            className="text"
+          >
+            second
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Dropdown>
+`;

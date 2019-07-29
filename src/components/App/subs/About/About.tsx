@@ -1,9 +1,8 @@
 import * as React from 'react'
+
 import * as style from './About.scss'
 
-interface AboutProps {
-  title: string
-}
+interface AboutProps {}
 
 class About extends React.Component<AboutProps> {
   render() {
