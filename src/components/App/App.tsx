@@ -36,6 +36,11 @@ const SignOut = lazy(() =>
 )
 
 function App() {
+  React.useEffect(() => {
+    console.info(`project env: ${process.env.PROJECT_ENV}`)
+    console.info(`version: ${config.version}`)
+  }, [])
+
   return (
     <UserProvider>
       <Router>

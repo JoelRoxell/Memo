@@ -4,7 +4,7 @@ import Input from 'components/common/Input'
 import Button from 'components/common/Button'
 import { UserContext } from 'contexts/user-context'
 import Loader from 'components/common/Loader'
-import backgroundImage from 'assets/img/leaf.jpg'
+// import backgroundImage from 'assets/img/leaf.jpg'
 import Card from 'components/common/Card'
 
 import * as style from './Login.scss'
@@ -14,7 +14,7 @@ function Login() {
   const valid = user.email.length > 3 && user.password.length > 3
 
   return (
-    <div className={style.login} style={{ background: `url(${backgroundImage})` }}>
+    <div className={style.login} style={{ background: `url(${'backgroundImage'})` }}>
       <Card className={style.view}>
         <form
           className={style.form}
