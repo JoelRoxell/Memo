@@ -7,7 +7,7 @@ export default function source(img: string | null) {
 
   return env({
     dev: `https://localhost:8001/image/${img}`,
-    stage: `https://{image-endpoint}/image/${img}`,
-    prod: `https://{image-endpoint}/image/${img}`
+    stage: `https://{image-endpoint-stage}/image/${img}`,
+    prod: `https://{image-endpoint-live}/image/${img}`
   })
 }

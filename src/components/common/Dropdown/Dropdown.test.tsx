@@ -23,7 +23,7 @@ describe('Dropdown', () => {
       <Dropdown
         items={[{ id: '1', value: 'first' }, { id: '2', value: 'second' }]}
         title="Select something"
-        onSelect={item => console.log('selected', item)}
+        onSelect={item => item}
       />
     )
 
@@ -42,7 +42,7 @@ describe('Dropdown', () => {
       <Dropdown
         items={[{ id: '1', value: 'first' }, { id: '2', value: 'second' }]}
         title="Select something"
-        onSelect={item => console.log('selected', item)}
+        onSelect={item => item}
       />
     )
 
@@ -75,7 +75,7 @@ describe('Dropdown', () => {
       <Dropdown
         items={[{ id: '1', value: 'first' }, { id: '2', value: 'second' }]}
         title="Select something"
-        onSelect={item => console.log('selected', item)}
+        onSelect={item => item}
         multi
       />
     )

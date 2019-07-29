@@ -39,8 +39,6 @@ class Dropdown extends React.Component<DropdownProps> {
   }
 
   onClick = (item: Item) => {
-    console.log('CLICK')
-
     if (this.props.multi) {
       const items = this.state.selected as Item[]
 

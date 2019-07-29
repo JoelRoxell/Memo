@@ -5,9 +5,10 @@ import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-d
 import ProtectedRoute from 'components/common/ProtectedRoute'
 import Loader from 'components/common/Loader'
 
-import * as style from './App.scss'
 import UserProvider from 'contexts/user-context'
 import config from 'project-config'
+
+import * as style from './App.scss'
 
 const Register = lazy(() =>
   import(
