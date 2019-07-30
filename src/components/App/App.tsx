@@ -7,6 +7,7 @@ import Loader from 'components/common/Loader'
 
 import UserProvider from 'contexts/user-context'
 import config from 'project-config'
+import Particles from 'react-particles-js'
 
 import * as style from './App.scss'
 
@@ -46,6 +47,26 @@ function App() {
       <Router>
         <div className={style.app}>
           <div className={style.view}>
+            <Particles
+              className={style.particles}
+              params={{
+                particles: {
+                  number: {
+                    value: 100,
+                    density: {
+                      enable: false
+                    }
+                  },
+                  line_linked: {
+                    shadow: {
+                      enable: true,
+                      color: '#e2c085'
+                    }
+                  }
+                }
+              }}
+            />
+
             <Suspense fallback={<Loader />}>
               <Switch>
                 <ProtectedRoute path="/login" redirect="/account" component={Login} reversed />

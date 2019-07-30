@@ -9,6 +9,31 @@ exports[`App render 1`] = `
       <div
         className="view"
       >
+        <t
+          className="particles"
+          height="100%"
+          params={
+            Object {
+              "particles": Object {
+                "line_linked": Object {
+                  "shadow": Object {
+                    "blur": 5,
+                    "color": "#e2c085",
+                    "enable": true,
+                  },
+                },
+                "number": Object {
+                  "density": Object {
+                    "enable": false,
+                  },
+                  "value": 100,
+                },
+              },
+            }
+          }
+          style={Object {}}
+          width="100%"
+        />
         <Suspense
           fallback={<Loader />}
         >

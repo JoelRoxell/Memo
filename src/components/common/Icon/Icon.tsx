@@ -2,10 +2,12 @@ import * as React from 'react'
 
 import UserIcon from 'assets/svg/fill.svg'
 import EyeWithLine from 'assets/svg/eye-with-line.svg'
+import LogoSvg from 'assets/svg/logo.svg'
 
 const ICONS = {
   user: UserIcon,
-  eye: EyeWithLine
+  eye: EyeWithLine,
+  logo: LogoSvg
 }
 
 interface IconProps {
