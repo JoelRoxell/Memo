@@ -37,9 +37,11 @@ function Input(props: InputProps) {
         {props.leftIcon && (
           <Icon
             name={props.leftIcon}
-            className={classNames(style.leftIcon, styleState, { [style.focus]: focus })}
-            width={24}
-            height={24}
+            svgStyle={{
+              className: classNames(style.leftIcon, styleState, { [style.focus]: focus }),
+              width: 24,
+              height: 24
+            }}
           />
         )}
 
@@ -64,9 +66,11 @@ function Input(props: InputProps) {
         {props.rightIcon && (
           <Icon
             name={props.rightIcon}
-            className={classNames(style.rightIcon, styleState, { [style.focus]: focus })}
-            width={24}
-            height={24}
+            svgStyle={{
+              className: classNames(style.rightIcon, styleState, { [style.focus]: focus }),
+              width: 24,
+              height: 24
+            }}
           />
         )}
       </div>

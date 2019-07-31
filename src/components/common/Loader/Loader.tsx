@@ -20,7 +20,12 @@ function Loader(props: LoaderProps) {
         {props.active && (
           <Wrapper key="loader">
             <div style={{ textAlign: 'center' }}>
-              <Icon name="loader" stroke="#d95c00" />
+              <Icon
+                name="loader"
+                svgStyle={{
+                  stroke: '#d95c00'
+                }}
+              />
             </div>
           </Wrapper>
         )}

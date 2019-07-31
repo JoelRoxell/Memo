@@ -22,10 +22,14 @@
       flex-direction: column;
       text-decoration: none;
       color: tan;
+      color: red;
+      fill: red;
+      transition: fill 0.3s, color 0.3s;
     }
 
     .active {
-      color: red;
+      color: blue;
+      fill: blue;
     }
   }
 
@@ -45,5 +49,7 @@
     @extend .button;
 
     border: 1px solid tan;
+
+    fill: palegoldenrod;
   }
 }

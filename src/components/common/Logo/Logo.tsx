@@ -34,7 +34,7 @@ function Logo(props: LogoProps) {
   return (
     <Box pose={active ? 'visible' : 'hidden'}>
       <div className={classNames(style.logo, props.className)}>
-        <Icon name="logo" fill="#e2c085" />
+        <Icon name="logo" svgStyle={{ fill: '#e2c085' }} />
       </div>
     </Box>
   )

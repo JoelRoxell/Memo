@@ -14,12 +14,14 @@ export const ICONS = {
 
 interface IconProps {
   name?: string
-  width?: number
-  height?: number
-  fill?: string
-  stroke?: string
-  className?: string
-  icon?: any
+  icon?: React.ReactNode
+  svgStyle?: {
+    width?: number
+    height?: number
+    fill?: string
+    stroke?: string
+    className?: string
+  }
 }
 
 function Icon(props: IconProps) {
@@ -30,7 +32,7 @@ function Icon(props: IconProps) {
 
   if (!Component) throw '<Icon />: Either name or icon must be set for an svg to render properly.'
 
-  return <Component {...props} />
+  return <Component {...props.svgStyle} />
 }
 
 export default Icon
