@@ -12,7 +12,7 @@ class Auth {
   constructor(http: AxiosInstance) {
     this.http = http
     this.socket = env({
-      dev: 'http://localhost:8005/user',
+      dev: 'https://localhost:8005/user',
       prod: 'https://{auth-endpoint}/user',
       stage: 'https://{auth-endpoint}/user'
     })

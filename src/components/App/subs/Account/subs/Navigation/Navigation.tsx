@@ -6,6 +6,7 @@ import Icon from 'components/common/Icon'
 import { ICONS } from 'components/common/Icon/Icon'
 import posed from 'react-pose'
 import { NavLink } from 'react-router-dom'
+import Item from './subs/Item'
 
 interface NavigationProps {
   user: UserContext
@@ -27,11 +28,6 @@ const Sidebar = posed.ul({
   }
 })
 
-const Item = posed.li({
-  visible: { x: 0, opacity: 1 },
-  hidden: { x: -20, opacity: 0 }
-})
-
 function Navigation({ user }: NavigationProps) {
   const [active, setActive] = React.useState(false)
 
@@ -42,23 +38,21 @@ function Navigation({ user }: NavigationProps) {
   return (
     <div className={style.navigation}>
       <Sidebar key="nav-selections" pose={active ? 'visible' : 'hidden'}>
-        <Item className={style.link} key="dashboard">
-          <NavLink to={'/account/dashboard'} activeClassName={style.active}>
-            <Icon icon={ICONS.eye} />
-            Dashboard
-          </NavLink>
-        </Item>
+        <Item icon={ICONS.home} title="Dashboard" to="/account/dashboard" />
 
-        <Item className={style.link} key="grow-zones">
-          <NavLink to={'/account/grow-zones'} activeClassName={style.active}>
-            <Icon icon={ICONS.eye} />
-            Grow Zones
-          </NavLink>
-        </Item>
+        <Item icon={ICONS.growZone} title="Grow Zones" to="/account/grow-zones" />
+
+        <Item icon={ICONS.density} title="Analytics" to="/account/analytics" />
+
+        <Item icon={ICONS.system} title="System" to="/account/system" />
+
+        <Item icon={ICONS.settings} title="Settings" to="/account/settings" />
       </Sidebar>
 
       <div className={style.signOut} onClick={() => user.signOut()}>
-        <Icon icon={ICONS.eye} />
+        <Icon icon={ICONS.logout} />
+
+        <p>{'Logout'}</p>
       </div>
     </div>
   )
