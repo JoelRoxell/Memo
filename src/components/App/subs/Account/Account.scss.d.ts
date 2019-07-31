@@ -4,5 +4,4 @@ export const top: string;
 export const corner: string;
 export const header: string;
 export const body: string;
-export const navigation: string;
 export const view: string;

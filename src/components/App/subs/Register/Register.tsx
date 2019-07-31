@@ -43,7 +43,7 @@ function Register() {
           />
         </form>
 
-        {user.loading && <Loader />}
+        {<Loader active={user.loading} />}
       </div>
     </div>
   )

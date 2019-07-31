@@ -32,8 +32,9 @@ export default function UserProvider({
   const [user, setUser] = useState({
     email: defaultUser ? defaultUser.email : '',
     password: defaultUser ? defaultUser.password : '',
-    token: defaultUser ? defaultUser.token : ''
+    token: defaultUser ? defaultUser.token : '' || localStorage.getItem('token')
   })
+
   const actions = {
     setUser,
     register() {

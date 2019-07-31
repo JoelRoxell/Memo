@@ -56,53 +56,57 @@ function App() {
   return (
     <UserProvider>
       <Route
-        render={({ location }) => (
-          <div className={style.app}>
-            <div className={style.view}>
-              <PoseGroup>
-                <RouteContainer key={location.pathname} style={{ width: '100%' }}>
-                  <Suspense fallback={<Loader key="loader" />}>
-                    <Switch location={location} key="switcher">
-                      <ProtectedRoute
-                        path="/account"
-                        redirect="/login"
-                        component={Account}
-                        key="login"
-                      />
+        render={({ location }) => {
+          const location_key = location.pathname.split('/')[1] // only animate view on root-path-changes.
 
-                      <ProtectedRoute
-                        path="/login"
-                        redirect="/account"
-                        component={Login}
-                        reversed
-                        key="login"
-                      />
+          return (
+            <div className={style.app}>
+              <div className={style.view}>
+                <PoseGroup>
+                  <RouteContainer key={location_key} style={{ width: '100%' }}>
+                    <Suspense fallback={<Loader active key="loader" />}>
+                      <Switch location={location} key="switcher">
+                        <ProtectedRoute
+                          path="/account"
+                          redirect="/login"
+                          component={Account}
+                          key="login"
+                        />
 
-                      <ProtectedRoute
-                        path="/register"
-                        redirect="/account"
-                        component={Register}
-                        reversed
-                        key="register"
-                      />
+                        <ProtectedRoute
+                          path="/login"
+                          redirect="/account/dashboard"
+                          component={Login}
+                          reversed
+                          key="login"
+                        />
 
-                      <ProtectedRoute
-                        path="/sign-out"
-                        redirect="/login"
-                        component={SignOut}
-                        key="sign-out"
-                      />
+                        <ProtectedRoute
+                          path="/register"
+                          redirect="/account/dashboard"
+                          component={Register}
+                          reversed
+                          key="register"
+                        />
 
-                      <Route path="/about" component={About} key="account" />
+                        <ProtectedRoute
+                          path="/sign-out"
+                          redirect="/login"
+                          component={SignOut}
+                          key="sign-out"
+                        />
 
-                      <Route exact path="/" render={() => <Redirect to="/login" key="none" />} />
-                    </Switch>
-                  </Suspense>
-                </RouteContainer>
-              </PoseGroup>
+                        <Route path="/about" component={About} key="account" />
+
+                        <Route exact path="/" render={() => <Redirect to="/login" key="none" />} />
+                      </Switch>
+                    </Suspense>
+                  </RouteContainer>
+                </PoseGroup>
+              </div>
             </div>
-          </div>
-        )}
+          )
+        }}
       />
 
       <div>{config.version}</div>

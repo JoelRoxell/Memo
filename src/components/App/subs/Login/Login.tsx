@@ -95,11 +95,9 @@ function Login() {
 
             <Button type={Button.types.SECONDARY} to="register" title="Register as a new User" />
 
-            <Button type={Button.types.SECONDARY} to="about" title="About" />
-
-            {<Loader />}
-
             <div className={style.error}>{user.error}</div>
+
+            <Loader active={user.loading} />
           </form>
         </Card>
 

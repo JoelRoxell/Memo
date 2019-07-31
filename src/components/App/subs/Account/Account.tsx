@@ -2,9 +2,9 @@ import * as React from 'react'
 import { Switch, Route } from 'react-router'
 
 import * as style from './Account.scss'
-import Button from 'components/common/Button'
 import { UserContext } from 'contexts/user-context'
 import Dashboard from './subs/Dashboard'
+import Navigation from './subs/Navigation'
 
 function Account() {
   const user = React.useContext(UserContext) as UserContext
@@ -18,18 +18,16 @@ function Account() {
       </div>
 
       <div className={style.body}>
-        <div className={style.navigation} />
+        <Navigation user={user} />
 
         <div className={style.view}>
           <Switch>
             <Route
               exact
-              path="/account"
+              path="/account/dashboard"
               render={() => (
                 <>
                   <Dashboard />
-
-                  <Button title="Sign out" type="primary" onClick={() => user.signOut()} />
                 </>
               )}
             />
