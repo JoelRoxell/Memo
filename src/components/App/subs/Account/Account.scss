@@ -12,6 +12,15 @@
       width: rem(128);
       height: rem(96);
       background-color: $background;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .logo {
+        fill: $tertiary;
+        width: rem(80);
+        margin: rem(24);
+      }
     }
 
     .header {

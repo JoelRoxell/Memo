@@ -19,7 +19,7 @@
 
     &:hover {
       color: $secondary;
-      fill: $primary;
+      fill: $tertiary;
     }
   }
 
@@ -29,6 +29,6 @@
 
   .active {
     color: $secondary;
-    fill: $primary;
+    fill: $tertiary;
   }
 }

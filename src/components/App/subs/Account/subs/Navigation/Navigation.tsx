@@ -2,10 +2,8 @@ import * as React from 'react'
 
 import * as style from './Navigation.scss'
 import { UserContext } from 'contexts/user-context'
-import Icon from 'components/common/Icon'
-import { ICONS } from 'components/common/Icon/Icon'
+import Icon, { ICONS } from 'components/common/Icon'
 import posed from 'react-pose'
-import { NavLink } from 'react-router-dom'
 import Item from './subs/Item'
 
 interface NavigationProps {

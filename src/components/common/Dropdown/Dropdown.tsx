@@ -77,7 +77,7 @@ class Dropdown extends React.Component<DropdownProps> {
           })}
           onClick={() => this.toggle(!this.state.active)}
         >
-          {this.props.icon && <Icon name={this.props.icon} className={style.icon} />}
+          {this.props.icon && <Icon name={this.props.icon} svgStyle={{ className: style.icon }} />}
 
           {this.props.title}
         </div>

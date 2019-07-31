@@ -7,19 +7,35 @@ import Dashboard from './subs/Dashboard'
 import Navigation from './subs/Navigation'
 import posed, { PoseGroup } from 'react-pose'
 import Loader from 'components/common/Loader'
+import Icon from 'components/common/Icon'
 
 const RouteContainer = posed.div({
   enter: { opacity: 1, delay: 100, beforeChildren: true },
   exit: { opacity: 0 }
 })
 
+const LogoContainer = posed.div({
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+})
+
 function Account() {
   const user = React.useContext(UserContext) as UserContext
+
+  const [mounted, setDidMount] = React.useState(false)
+
+  React.useEffect(() => {
+    setDidMount(!mounted)
+  }, [])
 
   return (
     <div className={style.account}>
       <div className={style.top}>
-        <div className={style.corner} />
+        <div className={style.corner}>
+          <LogoContainer pose={mounted ? 'visible' : 'hidden'}>
+            <Icon name="logo" svgStyle={{ className: style.logo }} />
+          </LogoContainer>
+        </div>
 
         <div className={style.header} />
       </div>
