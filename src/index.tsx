@@ -1,10 +1,19 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 import App from 'components/App'
+// import { AppBk } from 'components/AppBk'
 
-function render(Component: any) {
-  ReactDOM.render(<Component />, document.getElementById('root') as HTMLElement)
+function render(App: any) {
+  console.log('called')
+
+  ReactDOM.render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    document.getElementById('root') as HTMLElement
+  )
 }
 
 render(App)
