@@ -1,4 +1,5 @@
 // This file is generated automatically
+export const center: string;
 export const statusBar: string;
 export const splitter: string;
 export const badge: string;

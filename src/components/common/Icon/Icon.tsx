@@ -9,6 +9,7 @@ interface IconProps {
   icon?: React.ReactNode
   badge?: number
   badgeStyle?: string
+  className?: string
   svgStyle?: {
     width?: number
     height?: number
@@ -27,7 +28,7 @@ function Icon(props: IconProps) {
   if (!Component) throw '<Icon />: Either name or icon must be set for an svg to render properly.'
 
   return (
-    <i className={style.icon}>
+    <i className={classNames(style.icon, props.className)}>
       {props.badge && (
         <div className={classNames(style.badge, props.badgeStyle)}>{props.badge}</div>
       )}

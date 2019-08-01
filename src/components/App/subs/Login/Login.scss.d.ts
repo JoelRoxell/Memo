@@ -1,4 +1,5 @@
 // This file is generated automatically
+export const center: string;
 export const login: string;
 export const view: string;
 export const input: string;

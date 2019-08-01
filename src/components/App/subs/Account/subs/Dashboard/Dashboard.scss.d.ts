@@ -1,4 +1,5 @@
 // This file is generated automatically
+export const center: string;
 export const dashboard: string;
 export const top: string;
 export const card: string;

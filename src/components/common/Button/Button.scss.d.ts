@@ -1,4 +1,5 @@
 // This file is generated automatically
+export const center: string;
 export const button: string;
 export const primary: string;
 export const secondary: string;

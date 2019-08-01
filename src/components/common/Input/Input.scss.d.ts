@@ -1,4 +1,5 @@
 // This file is generated automatically
+export const center: string;
 export const input: string;
 export const label: string;
 export const inputWrapper: string;

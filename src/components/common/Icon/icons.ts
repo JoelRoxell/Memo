@@ -6,7 +6,7 @@ import SettingsSvg from 'assets/svg/settings.svg'
 import SensorSvg from 'assets/svg/sensor.svg'
 import LogoutSvg from 'assets/svg/logout.svg'
 import BellSvg from 'assets/svg/bell.svg'
-import LightSvg from 'assets/svg/light.svg'
+import ledSvg from 'assets/svg/led.svg'
 import HomeSvg from 'assets/svg/home.svg'
 import DensitySvg from 'assets/svg/density.svg'
 import UserSvg from 'assets/svg/user.svg'
@@ -21,7 +21,7 @@ const ICONS = {
   sensor: SensorSvg,
   logout: LogoutSvg,
   bell: BellSvg,
-  light: LightSvg,
+  led: ledSvg,
   home: HomeSvg,
   density: DensitySvg,
   user: UserSvg,

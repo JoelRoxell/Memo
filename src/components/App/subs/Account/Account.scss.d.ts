@@ -1,4 +1,5 @@
 // This file is generated automatically
+export const center: string;
 export const account: string;
 export const top: string;
 export const corner: string;
