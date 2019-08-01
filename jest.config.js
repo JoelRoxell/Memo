@@ -10,7 +10,7 @@ module.exports = {
   moduleNameMapper: {
     '\\.(.css|scss)': 'identity-obj-proxy',
     api: '<rootDir>/src/api',
-    'utils/env': '<rootDir>/src/utils/env',
+    '^utils/(.*)$': '<rootDir>/src/utils/$1',
     'components/(.*)$': '<rootDir>/src/components/$1',
     'contexts/(.*)': '<rootDir>/src/contexts/$1',
     'project-config': '<rootDir>/src/project-config.ts',

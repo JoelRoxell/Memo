@@ -9,27 +9,41 @@ exports[`Account render 1`] = `
   >
     <div
       className="corner"
-    />
+    >
+      <ForwardRef
+        pose="hidden"
+      >
+        <Icon
+          name="logo"
+          svgStyle={
+            Object {
+              "className": "logo",
+            }
+          }
+        />
+      </ForwardRef>
+    </div>
     <div
       className="header"
-    />
+    >
+      <StatusBar
+        notificationCount={6}
+        totalPower={1.3}
+      />
+    </div>
   </div>
   <div
     className="body"
   >
-    <div
-      className="navigation"
+    <Navigation
+      user={Object {}}
     />
     <div
       className="view"
     >
-      <Switch>
-        <Route
-          exact={true}
-          path="/account"
-          render={[Function]}
-        />
-      </Switch>
+      <Route
+        render={[Function]}
+      />
     </div>
   </div>
 </div>

@@ -108,8 +108,6 @@ function App() {
           )
         }}
       />
-
-      <div>{config.version}</div>
     </UserProvider>
   )
 }

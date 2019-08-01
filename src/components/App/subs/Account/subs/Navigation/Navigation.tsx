@@ -40,7 +40,7 @@ function Navigation({ user }: NavigationProps) {
 
         <Item icon={ICONS.growZone} title="Grow Zones" to="/account/grow-zones" />
 
-        <Item icon={ICONS.density} title="Analytics" to="/account/analytics" />
+        <Item icon={ICONS.density} title="Analytics" to="/account/analytics" badge={2} />
 
         <Item icon={ICONS.system} title="System" to="/account/system" />
 

@@ -32,55 +32,131 @@ exports[`Register render 1`] = `
           <div
             className="view"
           >
-            This is should be a register page...
-            <Button
-              title="Login"
-              to="login"
-              type="default"
-            >
-              <NavLink
-                activeClassName="activeLink"
-                className="button primary"
-                to="login"
+            <form>
+              <Input
+                autoComplete="email"
+                name="email"
+                onChange={[Function]}
+                placeholder="email"
+                rightIcon="user"
+                title="User"
+                validate={[Function]}
+                value=""
               >
-                <Link
-                  aria-current={null}
+                <div
+                  className="input"
+                >
+                  <div
+                    className="label"
+                  >
+                    User
+                  </div>
+                  <div
+                    className="inputWrapper"
+                  >
+                    <input
+                      autoComplete="email"
+                      className="textField"
+                      name="email"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="email"
+                      type="text"
+                      value=""
+                    />
+                    <Icon
+                      name="user"
+                      svgStyle={
+                        Object {
+                          "className": "rightIcon",
+                          "height": 24,
+                          "width": 24,
+                        }
+                      }
+                    >
+                      <i
+                        className="icon"
+                      >
+                        <default
+                          className="rightIcon"
+                          height={24}
+                          width={24}
+                        />
+                      </i>
+                    </Icon>
+                  </div>
+                </div>
+              </Input>
+              This is should be a register page...
+              <Button
+                title="Login"
+                to="login"
+                type="default"
+              >
+                <NavLink
+                  activeClassName="activeLink"
                   className="button primary"
                   to="login"
                 >
-                  <a
+                  <Link
                     aria-current={null}
                     className="button primary"
-                    href="/login"
-                    onClick={[Function]}
+                    to="login"
                   >
-                    <div
-                      className="inner"
+                    <a
+                      aria-current={null}
+                      className="button primary"
+                      href="/login"
+                      onClick={[Function]}
                     >
-                      <p
-                        className="text"
+                      <div
+                        className="inner"
                       >
-                        Login
-                      </p>
-                    </div>
-                  </a>
-                </Link>
-              </NavLink>
-            </Button>
-            <Button
-              onClick={[Function]}
-              title="Register"
-              type="default"
-            >
-              <button
-                className="button primary"
+                        <p
+                          className="text"
+                        >
+                          Login
+                        </p>
+                      </div>
+                    </a>
+                  </Link>
+                </NavLink>
+              </Button>
+              <Button
                 onClick={[Function]}
+                title="Register"
+                type="default"
               >
-                <p>
-                  Register
-                </p>
-              </button>
-            </Button>
+                <button
+                  className="button primary"
+                  onClick={[Function]}
+                >
+                  <p>
+                    Register
+                  </p>
+                </button>
+              </Button>
+            </form>
+            <Loader
+              active={false}
+            >
+              <div
+                className="loader"
+              >
+                <PoseGroup
+                  flipMove={true}
+                >
+                  <Transition
+                    enterAfterExit={false}
+                    enterPose="enter"
+                    exitPose="exit"
+                    flipMove={true}
+                    preEnterPose="exit"
+                  />
+                </PoseGroup>
+              </div>
+            </Loader>
           </div>
         </div>
       </Register>

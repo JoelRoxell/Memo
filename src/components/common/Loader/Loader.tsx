@@ -23,7 +23,7 @@ function Loader(props: LoaderProps) {
               <Icon
                 name="loader"
                 svgStyle={{
-                  stroke: '#d95c00'
+                  stroke: 'rgb(226, 192, 133)'
                 }}
               />
             </div>

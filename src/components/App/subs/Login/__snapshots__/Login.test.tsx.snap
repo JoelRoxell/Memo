@@ -29,190 +29,322 @@ exports[`Login render 1`] = `
         <div
           className="login"
         >
-          <Card
-            className="view"
+          <ForwardRef
+            pose="visible"
           >
-            <div
-              className="card view"
+            <PoseElement
+              elementType="div"
+              innerRef={null}
+              pose="visible"
+              poseConfig={
+                Object {
+                  "hidden": Object {
+                    "opacity": 0,
+                    "y": "3%",
+                  },
+                  "visible": Object {
+                    "delayChildren": 300,
+                    "opacity": 1,
+                    "staggerChildren": 50,
+                    "transition": Object {
+                      "y": Object {
+                        "damping": 50,
+                        "stiffness": 800,
+                        "type": "spring",
+                      },
+                    },
+                    "y": "0%",
+                  },
+                }
+              }
             >
-              <form
-                className="form"
-                onSubmit={[Function]}
-              >
-                <div
-                  className="logo"
-                >
-                  Login title
-                </div>
-                <Input
-                  autoComplete="email"
-                  className="input"
-                  name="email"
-                  onChange={[Function]}
-                  placeholder="email"
-                  rightIcon="user"
-                  title="User"
-                  validate={[Function]}
-                  value=""
+              <div>
+                <Card
+                  className="view"
                 >
                   <div
-                    className="input input"
+                    className="card view"
                   >
-                    <div
-                      className="label"
+                    <form
+                      className="form"
+                      onSubmit={[Function]}
                     >
-                      User
-                    </div>
-                    <div
-                      className="inputWrapper"
-                    >
-                      <input
+                      <Logo
+                        className="logo"
+                      >
+                        <ForwardRef
+                          pose="visible"
+                        >
+                          <PoseElement
+                            elementType="div"
+                            getInitialPoseFromParent={[Function]}
+                            getParentPoseConfig={[Function]}
+                            innerRef={null}
+                            onUnmount={[Function]}
+                            pose="visible"
+                            poseConfig={
+                              Object {
+                                "hidden": Object {
+                                  "opacity": 0,
+                                  "y": "0%",
+                                },
+                                "visible": Object {
+                                  "opacity": 1,
+                                  "transition": Object {
+                                    "default": Object {
+                                      "duration": 500,
+                                      "ease": "linear",
+                                    },
+                                    "opacity": Object {
+                                      "duration": 600,
+                                      "ease": "easeOut",
+                                    },
+                                    "stiffness": 100,
+                                    "type": "spring",
+                                    "y": Object {
+                                      "duration": 600,
+                                      "ease": "easeOut",
+                                    },
+                                  },
+                                  "y": "-3%",
+                                },
+                              }
+                            }
+                            registerChild={[Function]}
+                          >
+                            <div>
+                              <div
+                                className="logo logo"
+                              >
+                                <Icon
+                                  name="logo"
+                                  svgStyle={
+                                    Object {
+                                      "fill": "#e2c085",
+                                    }
+                                  }
+                                >
+                                  <i
+                                    className="icon"
+                                  >
+                                    <default
+                                      fill="#e2c085"
+                                    />
+                                  </i>
+                                </Icon>
+                              </div>
+                            </div>
+                          </PoseElement>
+                        </ForwardRef>
+                      </Logo>
+                      <Input
                         autoComplete="email"
-                        className="textField"
+                        className="input"
                         name="email"
-                        onBlur={[Function]}
                         onChange={[Function]}
-                        onFocus={[Function]}
                         placeholder="email"
-                        type="text"
+                        rightIcon="user"
+                        title="User"
+                        validate={[Function]}
                         value=""
-                      />
-                      <Icon
-                        className="rightIcon"
-                        height={24}
-                        name="user"
-                        width={24}
-                      >
-                        <default
-                          className="rightIcon"
-                          height={24}
-                          name="user"
-                          width={24}
-                        />
-                      </Icon>
-                    </div>
-                  </div>
-                </Input>
-                <Input
-                  autoComplete="password"
-                  className="input"
-                  name="password"
-                  onChange={[Function]}
-                  placeholder="password"
-                  rightIcon="eye"
-                  title="Password"
-                  type="password"
-                  validate={[Function]}
-                  value=""
-                >
-                  <div
-                    className="input input"
-                  >
-                    <div
-                      className="label"
-                    >
-                      Password
-                    </div>
-                    <div
-                      className="inputWrapper"
-                    >
-                      <input
-                        autoComplete="password"
-                        className="textField"
-                        name="password"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        placeholder="password"
-                        type="password"
-                        value=""
-                      />
-                      <Icon
-                        className="rightIcon"
-                        height={24}
-                        name="eye"
-                        width={24}
-                      >
-                        <default
-                          className="rightIcon"
-                          height={24}
-                          name="eye"
-                          width={24}
-                        />
-                      </Icon>
-                    </div>
-                  </div>
-                </Input>
-                <Button
-                  disabled={true}
-                  title="Sign in"
-                >
-                  <button
-                    className="button primary disabled"
-                    disabled={true}
-                  >
-                    <p>
-                      Sign in
-                    </p>
-                  </button>
-                </Button>
-                <div
-                  className="split"
-                >
-                  <div
-                    className="line"
-                  />
-                  <div
-                    className="text"
-                  >
-                    or
-                  </div>
-                  <div
-                    className="line"
-                  />
-                </div>
-                <Button
-                  title="Register as a new User"
-                  to="register"
-                  type="secondary"
-                >
-                  <NavLink
-                    activeClassName="activeLink"
-                    className="button secondary"
-                    to="register"
-                  >
-                    <Link
-                      aria-current={null}
-                      className="button secondary"
-                      to="register"
-                    >
-                      <a
-                        aria-current={null}
-                        className="button secondary"
-                        href="/register"
-                        onClick={[Function]}
                       >
                         <div
-                          className="inner"
+                          className="input input"
                         >
-                          <p
-                            className="text"
+                          <div
+                            className="label"
                           >
-                            Register as a new User
-                          </p>
+                            User
+                          </div>
+                          <div
+                            className="inputWrapper"
+                          >
+                            <input
+                              autoComplete="email"
+                              className="textField"
+                              name="email"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              placeholder="email"
+                              type="text"
+                              value=""
+                            />
+                            <Icon
+                              name="user"
+                              svgStyle={
+                                Object {
+                                  "className": "rightIcon",
+                                  "height": 24,
+                                  "width": 24,
+                                }
+                              }
+                            >
+                              <i
+                                className="icon"
+                              >
+                                <default
+                                  className="rightIcon"
+                                  height={24}
+                                  width={24}
+                                />
+                              </i>
+                            </Icon>
+                          </div>
                         </div>
-                      </a>
-                    </Link>
-                  </NavLink>
-                </Button>
-              </form>
-            </div>
-          </Card>
-          <div
-            className="copy"
-          >
-            © 2019 X AB. All rights reserved.
-          </div>
+                      </Input>
+                      <Input
+                        autoComplete="password"
+                        className="input"
+                        name="password"
+                        onChange={[Function]}
+                        placeholder="password"
+                        rightIcon="eye"
+                        title="Password"
+                        type="password"
+                        validate={[Function]}
+                        value=""
+                      >
+                        <div
+                          className="input input"
+                        >
+                          <div
+                            className="label"
+                          >
+                            Password
+                          </div>
+                          <div
+                            className="inputWrapper"
+                          >
+                            <input
+                              autoComplete="password"
+                              className="textField"
+                              name="password"
+                              onBlur={[Function]}
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              placeholder="password"
+                              type="password"
+                              value=""
+                            />
+                            <Icon
+                              name="eye"
+                              svgStyle={
+                                Object {
+                                  "className": "rightIcon",
+                                  "height": 24,
+                                  "width": 24,
+                                }
+                              }
+                            >
+                              <i
+                                className="icon"
+                              >
+                                <default
+                                  className="rightIcon"
+                                  height={24}
+                                  width={24}
+                                />
+                              </i>
+                            </Icon>
+                          </div>
+                        </div>
+                      </Input>
+                      <Button
+                        disabled={true}
+                        title="Sign in"
+                      >
+                        <button
+                          className="button primary disabled"
+                          disabled={true}
+                        >
+                          <p>
+                            Sign in
+                          </p>
+                        </button>
+                      </Button>
+                      <div
+                        className="split"
+                      >
+                        <div
+                          className="line"
+                        />
+                        <div
+                          className="text"
+                        >
+                          or
+                        </div>
+                        <div
+                          className="line"
+                        />
+                      </div>
+                      <Button
+                        title="Register as a new User"
+                        to="register"
+                        type="secondary"
+                      >
+                        <NavLink
+                          activeClassName="activeLink"
+                          className="button secondary"
+                          to="register"
+                        >
+                          <Link
+                            aria-current={null}
+                            className="button secondary"
+                            to="register"
+                          >
+                            <a
+                              aria-current={null}
+                              className="button secondary"
+                              href="/register"
+                              onClick={[Function]}
+                            >
+                              <div
+                                className="inner"
+                              >
+                                <p
+                                  className="text"
+                                >
+                                  Register as a new User
+                                </p>
+                              </div>
+                            </a>
+                          </Link>
+                        </NavLink>
+                      </Button>
+                      <div
+                        className="error"
+                      />
+                      <Loader
+                        active={false}
+                      >
+                        <div
+                          className="loader"
+                        >
+                          <PoseGroup
+                            flipMove={true}
+                          >
+                            <Transition
+                              enterAfterExit={false}
+                              enterPose="enter"
+                              exitPose="exit"
+                              flipMove={true}
+                              preEnterPose="exit"
+                            />
+                          </PoseGroup>
+                        </div>
+                      </Loader>
+                    </form>
+                  </div>
+                </Card>
+                <div
+                  className="copy"
+                >
+                  © 2019 X AB. All rights reserved.
+                </div>
+              </div>
+            </PoseElement>
+          </ForwardRef>
         </div>
       </Login>
     </Router>

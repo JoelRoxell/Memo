@@ -13,10 +13,14 @@ exports[`Input render 1`] = `
     className="inputWrapper"
   >
     <Icon
-      className="leftIcon"
-      height={24}
       name="left"
-      width={24}
+      svgStyle={
+        Object {
+          "className": "leftIcon",
+          "height": 24,
+          "width": 24,
+        }
+      }
     />
     <input
       autoComplete="email"
@@ -30,10 +34,14 @@ exports[`Input render 1`] = `
       value="default-text"
     />
     <Icon
-      className="rightIcon"
-      height={24}
       name="right"
-      width={24}
+      svgStyle={
+        Object {
+          "className": "rightIcon",
+          "height": 24,
+          "width": 24,
+        }
+      }
     />
   </div>
 </div>

@@ -1,3 +1,20 @@
 .icon {
-  color: red;
+  position: relative;
+  min-width: rem(16);
+  min-height: rem(16);
+  color: white;
+
+  .badge {
+    top: rem(-12);
+    right: rem(-8);
+    position: absolute;
+    background: $tertiary;
+    width: rem(20);
+    height: rem(20);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: rem(10);
+  }
 }

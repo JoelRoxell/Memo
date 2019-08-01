@@ -14,11 +14,12 @@ interface ItemProps {
   icon: React.ReactElement
   title: string
   to: string
+  badge?: number
 }
 const Item = (props: ItemProps) => (
   <ItemAnimation className={style.item} key={props.title}>
     <NavLink to={props.to} activeClassName={style.active}>
-      <Icon icon={props.icon} />
+      <Icon icon={props.icon} badge={props.badge} />
 
       <p>{props.title}</p>
     </NavLink>

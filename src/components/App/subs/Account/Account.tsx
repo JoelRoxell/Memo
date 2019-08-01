@@ -8,6 +8,7 @@ import Navigation from './subs/Navigation'
 import posed, { PoseGroup } from 'react-pose'
 import Loader from 'components/common/Loader'
 import Icon from 'components/common/Icon'
+import StatusBar from './subs/StatusBar'
 
 const RouteContainer = posed.div({
   enter: { opacity: 1, delay: 100, beforeChildren: true },
@@ -37,7 +38,9 @@ function Account() {
           </LogoContainer>
         </div>
 
-        <div className={style.header} />
+        <div className={style.header}>
+          <StatusBar username={user.email} notificationCount={6} totalPower={1.3} />
+        </div>
       </div>
 
       <div className={style.body}>
@@ -69,6 +72,36 @@ function Account() {
                           render={() => (
                             <>
                               <div>Grow some</div>
+                            </>
+                          )}
+                        />
+
+                        <Route
+                          exact
+                          path="/account/analytics"
+                          render={() => (
+                            <>
+                              <div>Analytics</div>
+                            </>
+                          )}
+                        />
+
+                        <Route
+                          exact
+                          path="/account/system"
+                          render={() => (
+                            <>
+                              <div>System</div>
+                            </>
+                          )}
+                        />
+
+                        <Route
+                          exact
+                          path="/account/Settings"
+                          render={() => (
+                            <>
+                              <div>Settings</div>
                             </>
                           )}
                         />

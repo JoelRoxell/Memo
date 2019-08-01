@@ -1,10 +1,14 @@
 import * as React from 'react'
+import classNames from 'classnames'
 
 import ICONS from './icons'
+import * as style from './Icon.scss'
 
 interface IconProps {
   name?: string
   icon?: React.ReactNode
+  badge?: number
+  badgeStyle?: string
   svgStyle?: {
     width?: number
     height?: number
@@ -22,7 +26,15 @@ function Icon(props: IconProps) {
 
   if (!Component) throw '<Icon />: Either name or icon must be set for an svg to render properly.'
 
-  return <Component {...props.svgStyle} />
+  return (
+    <i className={style.icon}>
+      {props.badge && (
+        <div className={classNames(style.badge, props.badgeStyle)}>{props.badge}</div>
+      )}
+
+      <Component {...props.svgStyle} />
+    </i>
+  )
 }
 
 export default Icon
