@@ -22,6 +22,7 @@
     fill: $grey;
     font-weight: bold;
     font-size: rem(14);
+    min-width: rem(20);
 
     &:first-child {
       display: flex;

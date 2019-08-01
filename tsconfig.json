@@ -18,7 +18,8 @@
     "paths": {
       "components/*": ["components/*"],
       "store/*": ["store/*"],
-      "utils/*": ["utils/*"]
+      "utils/*": ["utils/*"],
+      "hooks/*": ["hooks/*"]
     }
   },
   "exclude": ["node_modules", "build", "scripts", "webpack", "jest"]

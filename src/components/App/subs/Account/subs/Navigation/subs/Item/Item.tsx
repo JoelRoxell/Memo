@@ -19,7 +19,7 @@ interface ItemProps {
 const Item = (props: ItemProps) => (
   <ItemAnimation className={style.item} key={props.title}>
     <NavLink to={props.to} activeClassName={style.active}>
-      <Icon icon={props.icon} badge={props.badge} />
+      <Icon icon={props.icon} badge={props.badge} svgStyle={{ width: 29 }} />
 
       <p>{props.title}</p>
     </NavLink>

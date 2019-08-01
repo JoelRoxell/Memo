@@ -30,7 +30,8 @@ module.exports = env => {
           'project-config': path.join(srcPath, 'project-config'),
           assets: path.join(srcPath, 'assets'),
           utils: path.join(srcPath, 'utils'),
-          contexts: path.join(srcPath, 'contexts')
+          contexts: path.join(srcPath, 'contexts'),
+          hooks: path.join(srcPath, 'hooks')
         }
       },
       devServer: {
