@@ -9,24 +9,19 @@
 - Autoprefixer
 - Webpack (>4)
 
-![img](https://www.sartle.com/sites/default/files/images/artwork/wm_the_fight_between_aeneas_and_king_turnus_from_virgils_aeneid_Q20880310.jpg)
+![img](https://media.giphy.com/media/3oriNYQX2lC6dfW2Ji/giphy.gif)
 
 ## Usage
 
 Development:
 `npm start` or `npm run start:no-ssl`
 
-build container:
-`docker build -t <project>-front-end .`
-
-test application:
-`docker run <project>-front-end npm t`
-
-build application:
-`docker run -v $(pwd)/build:/usr/src/app/build <project>-front-end npm build`
-
 coverage
 `npm t -- --coverage.`
+
+## Build
+
+`npm run build`
 
 ## Add new path resolutions
 
