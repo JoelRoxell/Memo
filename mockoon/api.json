@@ -1,0 +1,116 @@
+{
+    "id": "mockoon_export",
+    "appVersion": "1.4.0",
+    "checksum": "bcf8f33cd3069f3c9cecc1337af7cb7c",
+    "subject": "full",
+    "data": [
+        {
+            "uuid": "4a670440-b9e7-11e9-9da2-c18c8aa2059b",
+            "name": "Aeneas",
+            "endpointPrefix": "",
+            "latency": 0,
+            "port": 8005,
+            "routes": [
+                {
+                    "uuid": "4a672b50-b9e7-11e9-9da2-c18c8aa2059b",
+                    "documentation": "",
+                    "method": "get",
+                    "endpoint": "status",
+                    "body": "{\n    \"status\": \"OK\"\n}",
+                    "latency": 3000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "uuid": "ee367e80-abe5-11e9-9286-61e5dce376d6",
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "4a672b51-b9e7-11e9-9da2-c18c8aa2059b",
+                    "documentation": "",
+                    "method": "post",
+                    "endpoint": "user",
+                    "body": "{\n    \"token\": \"123\"\n}",
+                    "latency": 500,
+                    "statusCode": "201",
+                    "headers": [
+                        {
+                            "uuid": "bed47db1-abe8-11e9-9286-61e5dce376d6",
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "4a672b52-b9e7-11e9-9da2-c18c8aa2059b",
+                    "documentation": "",
+                    "method": "patch",
+                    "endpoint": "user",
+                    "body": "{\n    \"token\": \"123\"\n}",
+                    "latency": 1000,
+                    "statusCode": "200",
+                    "headers": [
+                        {
+                            "uuid": "f9f78d61-abed-11e9-9286-61e5dce376d6",
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                },
+                {
+                    "uuid": "4a672b53-b9e7-11e9-9da2-c18c8aa2059b",
+                    "documentation": "",
+                    "method": "delete",
+                    "endpoint": "user",
+                    "body": "{}\n",
+                    "latency": 0,
+                    "statusCode": "202",
+                    "headers": [
+                        {
+                            "uuid": "2aea6001-abee-11e9-9286-61e5dce376d6",
+                            "key": "",
+                            "value": ""
+                        }
+                    ],
+                    "filePath": "",
+                    "sendFileAsBody": false
+                }
+            ],
+            "modifiedAt": "2019-07-31T11:59:17.941Z",
+            "proxyMode": false,
+            "proxyHost": "",
+            "https": true,
+            "cors": true,
+            "headers": [
+                {
+                    "uuid": "ee367e82-abe5-11e9-9286-61e5dce376d6",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "uuid": "9e79ec40-b38a-11e9-9286-61e5dce376d6",
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                },
+                {
+                    "uuid": "9e79ec41-b38a-11e9-9286-61e5dce376d6",
+                    "key": "Access-Control-Allow-Methods",
+                    "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+                },
+                {
+                    "uuid": "9e79ec42-b38a-11e9-9286-61e5dce376d6",
+                    "key": "Access-Control-Allow-Headers",
+                    "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+                }
+            ]
+        }
+    ]
+}

@@ -1,40 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Status render 1`] = `
-<div
-  className="status"
+<ForwardRef
+  pose="unMounted"
 >
-  <div
-    className="circleWrapper"
+  <Card
+    className="status"
   >
     <div
-      className="circle"
-      style={
-        Object {
-          "backgroundColor": "red",
+      className="circleWrapper"
+    >
+      <div
+        className="circle"
+        style={
+          Object {
+            "backgroundColor": "red",
+          }
         }
-      }
-    />
-    <Icon
-      className="iconWrapper"
-      icon="default"
-      svgStyle={
-        Object {
-          "className": "icon",
-          "fill": "red",
+      />
+      <Icon
+        className="iconWrapper"
+        icon="default"
+        svgStyle={
+          Object {
+            "className": "icon",
+            "fill": "red",
+          }
         }
-      }
-    />
-  </div>
-  <p
-    className="ratio"
-  >
-    3 / 4
-  </p>
-  <p
-    className="title"
-  >
-    A test
-  </p>
-</div>
+      />
+    </div>
+    <p
+      className="ratio"
+    >
+      3 / 4
+    </p>
+    <p
+      className="title"
+    >
+      A test
+    </p>
+  </Card>
+</ForwardRef>
 `;

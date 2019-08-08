@@ -3,10 +3,10 @@
   "version": "0.0.10",
   "description": "...",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --mode development --https --cert ./ssl/localhost.crt --key ./ssl/localhost.key --config config/webpack.base.config.js --env.PROJECT_ENV=development",
-    "start:no-ssl": "webpack-dev-server --hot --inline --mode development",
+    "start": "webpack-dev-server --mode development --https --cert ./ssl/localhost.crt --key ./ssl/localhost.key --config config/webpack.base.config.js --env.PROJECT_ENV=development",
+    "start:no-ssl": "webpack-dev-server --mode development",
     "build": "yarn clean;webpack --config ./config/webpack.prod.config.js --mode production --env.PROJECT_ENV=production",
-    "clean": "rimraf build/*",
+    "clean": "rimraf dist/*",
     "deploy": "python src/deployment/bucket.py",
     "test": "jest",
     "test:coverage": "jest --coverage --color"
@@ -16,6 +16,7 @@
     "@types/axios": "^0.14.0",
     "@types/classnames": "^2.2.9",
     "@types/hoist-non-react-statics": "^3.3.1",
+    "@types/jest": "^24.0.15",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.4",
@@ -25,6 +26,7 @@
     "axios": "^0.19.0",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
+    "compression-webpack-plugin": "^3.0.0",
     "css-loader": "^3.1.0",
     "dts-css-modules-loader": "^1.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -39,7 +41,6 @@
     "prepend-style-loader": "^2.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-particles-js": "^2.7.0",
     "react-pose": "^4.0.8",
     "react-router-dom": "^5.0.1",
     "react-svg-loader": "^3.0.3",
@@ -48,7 +49,6 @@
     "serve": "^11.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^6.0.4",
-    "tslint": "^5.18.0",
     "typescript": "^3.5.3",
     "typings-for-css-modules-loader": "^1.7.0",
     "url-loader": "^2.1.0",
@@ -70,14 +70,14 @@
   "devDependencies": {
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "^24.0.15",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
     "generator-annevo": "^1.1.6-beta.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.8.0",
-    "ts-jest": "^24.0.2"
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0"
   },
   "transform": {
     "^.+\\.tsx?$": "ts-jest"

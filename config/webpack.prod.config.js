@@ -2,6 +2,9 @@ const path = require('path')
 
 const merge = require('webpack-merge')
 const Visualizer = require('webpack-visualizer-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const baseConfig = require('./webpack.base.config')
 
@@ -15,18 +18,12 @@ const prodConfig = env => {
         publicPath: '/'
       },
       optimization: {
-        runtimeChunk: 'single',
+        // minimizer: [new UglifyJsPlugin()],
         splitChunks: {
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all'
-            }
-          }
+          chunks: 'all'
         }
       },
-      plugins: [new Visualizer({ filename: './statistics.html' })],
+      plugins: [new Visualizer({ filename: './statistics.html' }), new CompressionPlugin()],
       stats: {
         modules: false,
         moduleTrace: false,

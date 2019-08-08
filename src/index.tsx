@@ -3,11 +3,8 @@ import * as ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 
 import App from 'components/App'
-// import { AppBk } from 'components/AppBk'
 
 function render(App: any) {
-  console.log('called')
-
   ReactDOM.render(
     <BrowserRouter>
       <App />

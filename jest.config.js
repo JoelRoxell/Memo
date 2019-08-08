@@ -11,6 +11,7 @@ module.exports = {
     '\\.(.css|scss)': 'identity-obj-proxy',
     api: '<rootDir>/src/api',
     '^utils/(.*)$': '<rootDir>/src/utils/$1',
+    '^hooks/(.*)$': '<rootDir>/src/hooks/$1',
     'components/(.*)$': '<rootDir>/src/components/$1',
     'contexts/(.*)': '<rootDir>/src/contexts/$1',
     'project-config': '<rootDir>/src/project-config.ts',

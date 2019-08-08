@@ -20,6 +20,7 @@ Button.types = {
   SECONDARY: 'secondary',
   PRIMARY: 'primary'
 }
+
 function Button(props: ButtonProps) {
   let className
 

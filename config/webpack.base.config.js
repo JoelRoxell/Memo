@@ -38,7 +38,9 @@ module.exports = env => {
         historyApiFallback: true,
         contentBase: 'dist',
         stats: {
-          modules: false
+          modules: false,
+          moduleTrace: false,
+          entrypoints: false
         },
         hot: true,
         compress: true,
@@ -65,8 +67,10 @@ module.exports = env => {
         new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
           // both options are optional
-          filename: devMode ? '[name].css' : '[name].[hash].css',
-          chunkFilename: devMode ? '[id].[name].css' : '[id].[name].[hash].css'
+          filename: devMode ? 'static/css/[name].css' : 'static/css/[name].[hash].css',
+          chunkFilename: devMode
+            ? 'static/css/[id].[name].css'
+            : 'static/css/[id].[name].[hash].css'
         })
         // new ManifestPlugin({
         //   fileName: 'asset-manifest.json',

@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import Button from 'components/common/Button'
-
-import * as style from './Register.scss'
 import { UserContext } from 'contexts/user-context'
 import Loader from 'components/common/Loader'
 import Input from 'components/common/Input'
+import Button from 'components/common/Button'
+
+import * as style from './Register.scss'
 
 function Register() {
   const user = React.useContext(UserContext) as UserContext
