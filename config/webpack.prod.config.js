@@ -4,7 +4,6 @@ const merge = require('webpack-merge')
 const Visualizer = require('webpack-visualizer-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 // const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 const baseConfig = require('./webpack.base.config')
 
