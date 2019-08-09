@@ -2,7 +2,7 @@
 
 -> [TLDR](#Usage)
 
-Everything you need to develop a smooth high-end react application, in less than a week. The project's focus is to allow us, developers, to quickly realize ideas in projects that never gets blocked.
+Everything you need to develop a smooth high-end react application, in less than a week. The project's primary focus is to allow us, developers, to quickly realize new ideas without interference.
 
 ![img](https://media.giphy.com/media/3oriNYQX2lC6dfW2Ji/giphy.gif)
 
@@ -33,6 +33,7 @@ All in all, the project counters most (if not all) problematic parts one usually
 - Autoprefixer
 - An easy way to work with custom SVGs
 - Code splitting
+- Alias imports.
 
 ![img](https://media.giphy.com/media/ofrkfuqsR8mvm/giphy.gif)
 
@@ -53,7 +54,6 @@ Include all types of media, more concretely bitmaps, svgs, or anything similar.
 - Contexts - The folder contains global states and actions that tie together application-logic and API integrations. It is either via contexts or hooks which your API is exposed to your components.
 - Hooks - Reusable hooks of any kind.
 - Utils - This module includes all type of reusable functions or objects.
-- Alias imports.
 
 ## Usage
 
