@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import Register from 'components/App/subs/Register'
-import UserProvider from 'contexts/user-context'
+import UserProvider from 'contexts/UserContext'
 
 describe('Register', () => {
   test('render', () => {

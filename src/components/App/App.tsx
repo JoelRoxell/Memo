@@ -6,7 +6,7 @@ import posed, { PoseGroup } from 'react-pose'
 import ProtectedRoute from 'components/common/ProtectedRoute'
 import Loader from 'components/common/Loader'
 
-import UserProvider from 'contexts/user-context'
+import UserProvider from 'contexts/UserContext'
 import config from 'project-config'
 
 import * as style from './App.scss'

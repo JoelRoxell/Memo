@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { UserContext } from 'contexts/user-context'
+import { UserContext } from 'contexts/UserContext/user-context'
 import Loader from 'components/common/Loader'
 import Input from 'components/common/Input'
 import Button from 'components/common/Button'

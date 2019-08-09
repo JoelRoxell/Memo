@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import * as style from './Navigation.scss'
-import { UserContext } from 'contexts/user-context'
+import { UserContext } from 'contexts/UserContext'
 import Icon, { ICONS } from 'components/common/Icon'
 import posed from 'react-pose'
 import Item from './subs/Item'

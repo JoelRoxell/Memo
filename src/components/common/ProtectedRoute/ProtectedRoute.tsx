@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Route, Redirect } from 'react-router'
 
-import { UserContext } from 'contexts/user-context'
+import { UserContext } from 'contexts/UserContext'
 
 interface ProtectedRouteProps {
   path: string

@@ -3,7 +3,7 @@ import posed from 'react-pose'
 
 import Input from 'components/common/Input'
 import Button from 'components/common/Button'
-import { UserContext } from 'contexts/user-context'
+import { UserContext } from 'contexts/UserContext'
 import Loader from 'components/common/Loader'
 import Card from 'components/common/Card'
 

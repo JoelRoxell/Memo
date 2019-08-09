@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import { Route, Switch, MemoryRouter } from 'react-router-dom'
 
 import ProtectedRoute from './ProtectedRoute'
-import UserProvider from 'contexts/user-context'
+import UserProvider from 'contexts/UserContext'
 
 const Protected = () => <div>protected</div>
 const Login = () => <div>Login</div>

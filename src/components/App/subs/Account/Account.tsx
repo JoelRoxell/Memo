@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Switch, Redirect, Route } from 'react-router-dom'
 
 import * as style from './Account.scss'
-import { UserContext } from 'contexts/user-context'
+import { UserContext } from 'contexts/UserContext'
 import Dashboard from './subs/Dashboard'
 import Navigation from './subs/Navigation'
 import posed, { PoseGroup } from 'react-pose'
