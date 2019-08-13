@@ -16,9 +16,9 @@ describe('env', () => {
 
     expect(getEnv()).toEqual('dev-string')
 
-    process.env.PROJECT_ENV = 'stage'
+    process.env.PROJECT_ENV = 'staging'
 
-    expect(getEnv()).toEqual('dev-string')
+    expect(getEnv()).toEqual('stage-string')
 
     process.env.PROJECT_ENV = 'production'
 
